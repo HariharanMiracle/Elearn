@@ -365,19 +365,15 @@ class PagerRenderer
 	 */
 	public function getPreviousPage()
 	{
-		if (! $this->hasPreviousPage())
-		{
+		if (!$this->hasPreviousPage()) {
 			return null;
 		}
 
 		$uri = clone $this->uri;
 
-		if ($this->segment === 0)
-		{
+		if ($this->segment === 0) {
 			$uri->addQuery($this->pageSelector, $this->current - 1);
-		}
-		else
-		{
+		} else {
 			$uri->setSegment($this->segment, $this->current - 1);
 		}
 
@@ -407,19 +403,15 @@ class PagerRenderer
 	 */
 	public function getNextPage()
 	{
-		if (! $this->hasNextPage())
-		{
+		if (!$this->hasNextPage()) {
 			return null;
 		}
 
 		$uri = clone $this->uri;
 
-		if ($this->segment === 0)
-		{
+		if ($this->segment === 0) {
 			$uri->addQuery($this->pageSelector, $this->current + 1);
-		}
-		else
-		{
+		} else {
 			$uri->setSegment($this->segment, $this->current + 1);
 		}
 

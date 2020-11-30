@@ -124,7 +124,18 @@ class Entity implements \JsonSerializable
 
 		foreach ($data as $key => $value)
 		{
-			$this->$key = $value;
+			$key = $this->mapProperty($key);
+
+			$method = 'set' . str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $key)));
+
+			if (method_exists($this, $method))
+			{
+				$this->$method($value);
+			}
+			else
+			{
+				$this->attributes[$key] = $value;
+			}
 		}
 
 		return $this;
@@ -360,7 +371,7 @@ class Entity implements \JsonSerializable
 			// back to the database.
 			if (($castTo === 'json' || $castTo === 'json-array') && function_exists('json_encode'))
 			{
-				$value = json_encode($value, JSON_UNESCAPED_UNICODE);
+				$value = json_encode($value);
 
 				if (json_last_error() !== JSON_ERROR_NONE)
 				{

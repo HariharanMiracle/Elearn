@@ -167,13 +167,34 @@ class CIDatabaseTestCase extends CIUnitTestCase
 
 		if ($this->refresh === true)
 		{
-			$this->regressDatabase();
+			// If no namespace was specified then rollback/migrate all
+			if (empty($this->namespace))
+			{
+				$this->migrations->setNamespace(null);
 
-			// Reset counts on faked items
-			Fabricator::resetCounts();
+				$this->migrations->regress(0, 'tests');
+
+				$this->migrations->latest('tests');
+			}
+
+			// Run migrations for each specified namespace
+			else
+			{
+				$namespaces = is_array($this->namespace) ? $this->namespace : [$this->namespace];
+
+				foreach ($namespaces as $namespace)
+				{
+					$this->migrations->setNamespace($namespace);
+					$this->migrations->regress(0, 'tests');
+				}
+
+				foreach ($namespaces as $namespace)
+				{
+					$this->migrations->setNamespace($namespace);
+					$this->migrations->latest('tests');
+				}
+			}
 		}
-
-		$this->migrateDatabase();
 
 		if (! empty($this->seed))
 		{
@@ -212,55 +233,6 @@ class CIDatabaseTestCase extends CIUnitTestCase
 	}
 
 	//--------------------------------------------------------------------
-
-	/**
-	 * Regress migrations as defined by the class
-	 */
-	protected function regressDatabase()
-	{
-		// If no namespace was specified then rollback all
-		if (empty($this->namespace))
-		{
-			$this->migrations->setNamespace(null);
-			$this->migrations->regress(0, 'tests');
-		}
-
-		// Regress each specified namespace
-		else
-		{
-			$namespaces = is_array($this->namespace) ? $this->namespace : [$this->namespace];
-
-			foreach ($namespaces as $namespace)
-			{
-				$this->migrations->setNamespace($namespace);
-				$this->migrations->regress(0, 'tests');
-			}
-		}
-	}
-
-	/**
-	 * Run migrations as defined by the class
-	 */
-	protected function migrateDatabase()
-	{
-		// If no namespace was specified then migrate all
-		if (empty($this->namespace))
-		{
-			$this->migrations->setNamespace(null);
-			$this->migrations->latest('tests');
-		}
-		// Run migrations for each specified namespace
-		else
-		{
-			$namespaces = is_array($this->namespace) ? $this->namespace : [$this->namespace];
-
-			foreach ($namespaces as $namespace)
-			{
-				$this->migrations->setNamespace($namespace);
-				$this->migrations->latest('tests');
-			}
-		}
-	}
 
 	/**
 	 * Seeds that database with a specific seeder.

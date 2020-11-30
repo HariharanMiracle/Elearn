@@ -273,10 +273,9 @@ if (! function_exists('link_tag'))
 	 * @param  string  $title
 	 * @param  string  $media
 	 * @param  boolean $indexPage should indexPage be added to the CSS path.
-     	 * @param  string  $hreflang
 	 * @return string
 	 */
-	function link_tag($href = '', string $rel = 'stylesheet', string $type = 'text/css', string $title = '', string $media = '', bool $indexPage = false, string $hreflang = ''): string
+	function link_tag($href = '', string $rel = 'stylesheet', string $type = 'text/css', string $title = '', string $media = '', bool $indexPage = false): string
 	{
 		$link = '<link ';
 
@@ -287,7 +286,6 @@ if (! function_exists('link_tag'))
 			$type      = $href['type'] ?? $type;
 			$title     = $href['title'] ?? $title;
 			$media     = $href['media'] ?? $media;
-            		$hreflang  = $href['hreflang'] ?? '';
 			$indexPage = $href['indexPage'] ?? $indexPage;
 			$href      = $href['href'] ?? '';
 		}
@@ -308,17 +306,7 @@ if (! function_exists('link_tag'))
 			$link .= 'href="' . $href . '" ';
 		}
 
-		if ($hreflang !== '')
-		{
-		    $link .= 'hreflang="' . $hreflang .'" ';
-		}
-
-		$link .= 'rel="' . $rel . '" ';
-
-		if (! in_array($rel, ['alternate','canonical']))
-		{
-		    $link .= 'type="' . $type . '" ';
-		}
+		$link .= 'rel="' . $rel . '" type="' . $type . '" ';
 
 		if ($media !== '')
 		{
@@ -333,8 +321,7 @@ if (! function_exists('link_tag'))
 		return $link . '/>';
 	}
 }
-
-// ------------------------------------------------------------------------
+	// ------------------------------------------------------------------------
 
 if (! function_exists('video'))
 {

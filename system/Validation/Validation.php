@@ -250,38 +250,7 @@ class Validation implements ValidationInterface
 		{
 			if (! in_array('required', $rules) && (is_array($value) ? empty($value) : (trim($value) === '')))
 			{
-				$passed = true;
-
-				foreach ($rules as $rule)
-				{
-					if (preg_match('/(.*?)\[(.*)\]/', $rule, $match))
-					{
-						$rule  = $match[1];
-						$param = $match[2];
-
-						if (! in_array($rule, ['required_with', 'required_without']))
-						{
-							continue;
-						}
-
-						// Check in our rulesets
-						foreach ($this->ruleSetInstances as $set)
-						{
-							if (! method_exists($set, $rule))
-							{
-								continue;
-							}
-
-							$passed = $passed && $set->$rule($value, $param, $data);
-							break;
-						}
-					}
-				}
-
-				if ($passed === true)
-				{
-					return true;
-				}
+				return true;
 			}
 
 			$rules = array_diff($rules, ['permit_empty']);
@@ -624,7 +593,7 @@ class Validation implements ValidationInterface
 			throw ValidationException::forGroupNotArray($group);
 		}
 
-		$this->setRules($this->config->$group);
+		$this->rules = $this->config->$group;
 
 		// If {group}_errors exists in the config file,
 		// then override our custom errors with them.

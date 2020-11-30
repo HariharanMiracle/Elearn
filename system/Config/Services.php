@@ -152,23 +152,6 @@ class Services extends BaseService
 	//--------------------------------------------------------------------
 
 	/**
-	 * The commands utility for running and working with CLI commands.
-	 *
-	 * @param boolean $getShared
-	 *
-	 * @return \CodeIgniter\CLI\Commands|mixed
-	 */
-	public static function commands(bool $getShared = true)
-	{
-		if ($getShared)
-		{
-			return static::getSharedInstance('commands');
-		}
-
-		return new \CodeIgniter\CLI\Commands();
-	}
-
-	/**
 	 * The CURL Request class acts as a simple HTTP client for interacting
 	 * with other servers, typically through APIs.
 	 *
@@ -357,9 +340,9 @@ class Services extends BaseService
 	 * Acts as a factory for ImageHandler classes and returns an instance
 	 * of the handler. Used like Services::image()->withFile($path)->rotate(90)->save();
 	 *
-	 * @param string|null         $handler
-	 * @param \Config\Images|null $config
-	 * @param boolean             $getShared
+	 * @param string  $handler
+	 * @param mixed   $config
+	 * @param boolean $getShared
 	 *
 	 * @return \CodeIgniter\Images\Handlers\BaseHandler
 	 */
@@ -777,7 +760,7 @@ class Services extends BaseService
 		$logger = static::logger();
 
 		$driverName = $config->sessionDriver;
-		$driver     = new $driverName($config, static::request()->getIPAddress());
+		$driver     = new $driverName($config, static::request()->getIpAddress());
 		$driver->setLogger($logger);
 
 		$session = new Session($driver, $config);

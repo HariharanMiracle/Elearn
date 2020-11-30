@@ -144,9 +144,7 @@ class File extends SplFileInfo
 	{
 		if (! function_exists('finfo_open'))
 		{
-			// @codeCoverageIgnoreStart
 			return $this->originalMimeType ?? 'application/octet-stream';
-			// @codeCoverageIgnoreEnd
 		}
 
 		$finfo    = finfo_open(FILEINFO_MIME_TYPE);
@@ -195,7 +193,7 @@ class File extends SplFileInfo
 			throw FileException::forUnableToMove($this->getBasename(), $targetPath, strip_tags($error['message']));
 		}
 
-		@chmod($destination, 0777 & ~umask());
+		@chmod($targetPath, 0777 & ~umask());
 
 		return new File($destination);
 	}

@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * CodeIgniter
  *
@@ -66,7 +67,7 @@ class Negotiate
 	/**
 	 * Constructor
 	 *
-	 * @param \CodeIgniter\HTTP\RequestInterface|null $request
+	 * @param \CodeIgniter\HTTP\RequestInterface $request
 	 */
 	public function __construct(RequestInterface $request = null)
 	{
@@ -417,10 +418,14 @@ class Negotiate
 	 */
 	public function matchTypes(array $acceptable, array $supported): bool
 	{
-		// PHPDocumentor v2 cannot parse yet the shorter list syntax,
-		// causing no API generation for the file.
-		list($aType, $aSubType) = explode('/', $acceptable['value']);
-		list($sType, $sSubType) = explode('/', $supported['value']);
+		[
+			$aType,
+			$aSubType,
+		] = explode('/', $acceptable['value']);
+		[
+			$sType,
+			$sSubType,
+		] = explode('/', $supported['value']);
 
 		// If the types don't match, we're done.
 		if ($aType !== $sType)

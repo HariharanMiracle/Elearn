@@ -171,9 +171,6 @@ class Router implements RouterInterface
 				: $this->controller;
 		}
 
-		// Decode URL-encoded string
-		$uri = urldecode($uri);
-
 		if ($this->checkRoutes($uri))
 		{
 			if ($this->collection->isFiltered($this->matchedRoute[0]))
@@ -414,8 +411,6 @@ class Router implements RouterInterface
 				? $key
 				: ltrim($key, '/ ');
 
-			$matchedKey = $key;
-
 			// Are we dealing with a locale?
 			if (strpos($key, '{locale}') !== false)
 			{
@@ -423,17 +418,16 @@ class Router implements RouterInterface
 
 				// Replace it with a regex so it
 				// will actually match.
-				$key = str_replace('/', '\/', $key);
-				$key = str_replace('{locale}', '[^\/]+', $key);
+				$key = str_replace('{locale}', '[^/]+', $key);
 			}
 
 			// Does the RegEx match?
-			if (preg_match('#^' . $key . '$#u', $uri, $matches))
+			if (preg_match('#^' . $key . '$#', $uri, $matches))
 			{
 				// Is this route supposed to redirect to another?
 				if ($this->collection->isRedirect($key))
 				{
-					throw new RedirectException(is_array($val) ? key($val) : $val, $this->collection->getRedirectCode($key));
+					throw new RedirectException(key($val), $this->collection->getRedirectCode($key));
 				}
 				// Store our locale so CodeIgniter object can
 				// assign it to the Request.
@@ -458,11 +452,11 @@ class Router implements RouterInterface
 					$this->params = $matches;
 
 					$this->matchedRoute = [
-						$matchedKey,
+						$key,
 						$val,
 					];
 
-					$this->matchedRouteOptions = $this->collection->getRoutesOptions($matchedKey);
+					$this->matchedRouteOptions = $this->collection->getRoutesOptions($key);
 
 					return true;
 				}
@@ -473,12 +467,12 @@ class Router implements RouterInterface
 				if (strpos($val, '$') !== false && strpos($key, '(') !== false && strpos($key, '/') !== false)
 				{
 					$replacekey = str_replace('/(.*)', '', $key);
-					$val        = preg_replace('#^' . $key . '$#u', $val, $uri);
+					$val        = preg_replace('#^' . $key . '$#', $val, $uri);
 					$val        = str_replace($replacekey, str_replace('/', '\\', $replacekey), $val);
 				}
 				elseif (strpos($val, '$') !== false && strpos($key, '(') !== false)
 				{
-					$val = preg_replace('#^' . $key . '$#u', $val, $uri);
+					$val = preg_replace('#^' . $key . '$#', $val, $uri);
 				}
 				elseif (strpos($val, '/') !== false)
 				{
@@ -496,11 +490,11 @@ class Router implements RouterInterface
 				$this->setRequest(explode('/', $val));
 
 				$this->matchedRoute = [
-					$matchedKey,
+					$key,
 					$val,
 				];
 
-				$this->matchedRouteOptions = $this->collection->getRoutesOptions($matchedKey);
+				$this->matchedRouteOptions = $this->collection->getRoutesOptions($key);
 
 				return true;
 			}
@@ -540,7 +534,7 @@ class Router implements RouterInterface
 		// has already been set.
 		if (! empty($segments))
 		{
-			$this->method = array_shift($segments) ?: $this->method;
+			$this->method = array_shift($segments);
 		}
 
 		if (! empty($segments))
@@ -548,13 +542,11 @@ class Router implements RouterInterface
 			$this->params = $segments;
 		}
 
-		$defaultNamespace = $this->collection->getDefaultNamespace();
-		$controllerName   = $this->controllerName();
 		if ($this->collection->getHTTPVerb() !== 'cli')
 		{
-			$controller  = '\\' . $defaultNamespace;
+			$controller  = '\\' . $this->collection->getDefaultNamespace();
 			$controller .= $this->directory ? str_replace('/', '\\', $this->directory) : '';
-			$controller .= $controllerName;
+			$controller .= $this->controllerName();
 			$controller  = strtolower($controller);
 			$methodName  = strtolower($this->methodName());
 
@@ -577,7 +569,7 @@ class Router implements RouterInterface
 		}
 
 		// Load the file so that it's available for CodeIgniter.
-		$file = APPPATH . 'Controllers/' . $this->directory . $controllerName . '.php';
+		$file = APPPATH . 'Controllers/' . $this->directory . $this->controllerName() . '.php';
 		if (is_file($file))
 		{
 			include_once $file;
@@ -585,9 +577,9 @@ class Router implements RouterInterface
 
 		// Ensure the controller stores the fully-qualified class name
 		// We have to check for a length over 1, since by default it will be '\'
-		if (strpos($this->controller, '\\') === false && strlen($defaultNamespace) > 1)
+		if (strpos($this->controller, '\\') === false && strlen($this->collection->getDefaultNamespace()) > 1)
 		{
-			$this->controller = '\\' . ltrim(str_replace('/', '\\', $defaultNamespace . $this->directory . $controllerName), '\\');
+			$this->controller = '\\' . ltrim(str_replace('/', '\\', $this->collection->getDefaultNamespace() . $this->directory . $this->controllerName()), '\\');
 		}
 	}
 

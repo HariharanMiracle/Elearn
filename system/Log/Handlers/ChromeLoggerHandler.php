@@ -121,6 +121,7 @@ class ChromeLoggerHandler extends BaseHandler implements HandlerInterface
 		$request = Services::request(null, true);
 
 		$this->json['request_uri'] = (string) $request->uri;
+
 	}
 
 	//--------------------------------------------------------------------

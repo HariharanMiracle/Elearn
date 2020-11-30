@@ -94,7 +94,7 @@ if (! function_exists('directory_map'))
 			closedir($fp);
 			return $fileData;
 		}
-		catch (\Throwable $e)
+		catch (\Exception $fe)
 		{
 			return [];
 		}
@@ -138,7 +138,7 @@ if (! function_exists('write_file'))
 
 			return is_int($result);
 		}
-		catch (\Throwable $e)
+		catch (\Exception $fe)
 		{
 			return false;
 		}
@@ -160,48 +160,39 @@ if (! function_exists('delete_files'))
 	 * @param string  $path    File path
 	 * @param boolean $del_dir Whether to delete any directories found in the path
 	 * @param boolean $htdocs  Whether to skip deleting .htaccess and index page files
-	 * @param boolean $hidden  Whether to include hidden files (files beginning with a period)
+	 * @param integer $_level  Current directory depth level (default: 0; internal use only)
 	 *
 	 * @return boolean
 	 */
-	function delete_files(string $path, bool $del_dir = false, bool $htdocs = false, bool $hidden = false): bool
+	function delete_files(string $path, bool $del_dir = false, bool $htdocs = false, int $_level = 0): bool
 	{
-		$path = realpath($path) ?: $path;
-		$path = rtrim($path, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+		// Trim the trailing slash
+		$path = rtrim($path, '/\\');
 
 		try
 		{
-			foreach (new RecursiveIteratorIterator(
-				new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
-				RecursiveIteratorIterator::CHILD_FIRST
-			) as $object)
+			$current_dir = opendir($path);
+
+			while (false !== ($filename = @readdir($current_dir)))
 			{
-				$filename = $object->getFilename();
-
-				if (! $hidden && $filename[0] === '.')
+				if ($filename !== '.' && $filename !== '..')
 				{
-					continue;
-				}
-				elseif (! $htdocs || ! preg_match('/^(\.htaccess|index\.(html|htm|php)|web\.config)$/i', $filename))
-				{
-					$isDir = $object->isDir();
-
-					if ($isDir && $del_dir)
+					if (is_dir($path . DIRECTORY_SEPARATOR . $filename) && $filename[0] !== '.')
 					{
-						@rmdir($object->getPathname());
-						continue;
+						delete_files($path . DIRECTORY_SEPARATOR . $filename, $del_dir, $htdocs, $_level + 1);
 					}
-
-					if (! $isDir)
+					elseif ($htdocs !== true || ! preg_match('/^(\.htaccess|index\.(html|htm|php)|web\.config)$/i', $filename))
 					{
-						@unlink($object->getPathname());
+						@unlink($path . DIRECTORY_SEPARATOR . $filename);
 					}
 				}
 			}
 
-			return true;
+			closedir($current_dir);
+
+			return ($del_dir === true && $_level > 0) ? @rmdir($path) : true;
 		}
-		catch (\Throwable $e)
+		catch (\Exception $fe)
 		{
 			return false;
 		}
@@ -320,7 +311,7 @@ if (! function_exists('get_dir_file_info'))
 				return $fileData;
 			}
 		}
-		catch (\Throwable $fe)
+		catch (\Exception $fe)
 		{
 			return [];
 		}

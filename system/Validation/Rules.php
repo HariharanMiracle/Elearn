@@ -168,10 +168,7 @@ class Rules
 
 		if (! empty($where_field) && ! empty($where_value))
 		{
-			if (! preg_match('/^\{(\w+)\}$/', $where_value))
-			{
-				$row = $row->where($where_field, $where_value);
-			}
+			$row = $row->where($where_field, $where_value);
 		}
 
 		return (bool) ($row->get()
@@ -231,10 +228,7 @@ class Rules
 
 		if (! empty($ignoreField) && ! empty($ignoreValue))
 		{
-			if (! preg_match('/^\{(\w+)\}$/', $ignoreValue))
-			{
-				$row = $row->where("{$ignoreField} !=", $ignoreValue);
-			}
+			$row = $row->where("{$ignoreField} !=", $ignoreValue);
 		}
 
 		return (bool) ($row->get()

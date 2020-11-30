@@ -112,34 +112,6 @@ if (! function_exists('cache'))
 	}
 }
 
-if (! function_exists('command'))
-{
-	/**
-	 * Runs a single command.
-	 * Input expected in a single string as would
-	 * be used on the command line itself:
-	 *
-	 *  > command('migrate:create SomeMigration');
-	 *
-	 * @param string $command
-	 *
-	 * @return false|string
-	 */
-	function command(string $command)
-	{
-		$runner = service('commands');
-
-		$params  = explode(' ', $command);
-		$command = array_shift($params);
-
-		ob_start();
-		$runner->run($command, $params);
-		$output = ob_get_clean();
-
-		return $output;
-	}
-}
-
 if (! function_exists('config'))
 {
 	/**
@@ -428,7 +400,7 @@ if (! function_exists('force_https'))
 			$response = Services::response(null, true);
 		}
 
-		if ((ENVIRONMENT !== 'testing' && (is_cli() || $request->isSecure())) || (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'test'))
+		if (ENVIRONMENT !== 'testing' && (is_cli() || $request->isSecure()))
 		{
 			// @codeCoverageIgnoreStart
 			return;
@@ -447,11 +419,7 @@ if (! function_exists('force_https'))
 
 		$baseURL = config(App::class)->baseURL;
 
-		if (strpos($baseURL, 'https://') === 0)
-		{
-			$baseURL = (string) substr($baseURL, strlen('https://'));
-		}
-		elseif (strpos($baseURL, 'http://') === 0)
+		if (strpos($baseURL, 'http://') === 0)
 		{
 			$baseURL = (string) substr($baseURL, strlen('http://'));
 		}

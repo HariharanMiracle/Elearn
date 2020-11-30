@@ -252,20 +252,6 @@ class BaseBuilder
 	 */
 	protected $testMode = false;
 
-	/**
-	 * Tables relation types
-	 *
-	 * @var array
-	 */
-	protected $joinTypes = [
-		'LEFT',
-		'RIGHT',
-		'OUTER',
-		'INNER',
-		'LEFT OUTER',
-		'RIGHT OUTER',
-	];
-
 	//--------------------------------------------------------------------
 
 	/**
@@ -384,7 +370,7 @@ class BaseBuilder
 				 * This prevents NULL being escaped
 				 * @see https://github.com/codeigniter4/CodeIgniter4/issues/1169
 				 */
-				if (mb_stripos(trim($val), 'NULL') === 0)
+				if (strtoupper(mb_substr(trim($val), 0, 4)) === 'NULL')
 				{
 					$escape = false;
 				}
@@ -637,7 +623,7 @@ class BaseBuilder
 		{
 			$type = strtoupper(trim($type));
 
-			if (! in_array($type, $this->joinTypes, true))
+			if (! in_array($type, ['LEFT', 'RIGHT', 'OUTER', 'INNER', 'LEFT OUTER', 'RIGHT OUTER'], true))
 			{
 				$type = '';
 			}
@@ -677,7 +663,6 @@ class BaseBuilder
 					$pos            = $joints[$i][1] - strlen($joints[$i][0]);
 					$joints[$i]     = $joints[$i][0];
 				}
-				ksort($conditions);
 			}
 			else
 			{
@@ -686,11 +671,11 @@ class BaseBuilder
 			}
 
 			$cond = ' ON ';
-			foreach ($conditions as $i => $condition)
+			for ($i = 0, $c = count($conditions); $i < $c; $i ++)
 			{
-				$operator = $this->getOperator($condition);
+				$operator = $this->getOperator($conditions[$i]);
 				$cond    .= $joints[$i];
-				$cond    .= preg_match("/(\(*)?([\[\]\w\.'-]+)" . preg_quote($operator) . '(.*)/i', $condition, $match) ? $match[1] . $this->db->protectIdentifiers($match[2]) . $operator . $this->db->protectIdentifiers($match[3]) : $condition;
+				$cond    .= preg_match("/(\(*)?([\[\]\w\.'-]+)" . preg_quote($operator) . '(.*)/i', $conditions[$i], $match) ? $match[1] . $this->db->protectIdentifiers($match[2]) . $operator . $this->db->protectIdentifiers($match[3]) : $conditions[$i];
 			}
 		}
 
@@ -2453,9 +2438,7 @@ class BaseBuilder
 		{
 			$this->resetWrite();
 
-			$result = $this->db->query($sql, $this->binds, false);
-
-			if ($result->resultID !== false)
+			if ($this->db->query($sql, $this->binds, false))
 			{
 				// Clear our binds so we don't eat up memory
 				$this->binds = [];
@@ -3062,28 +3045,28 @@ class BaseBuilder
 	{
 		if (! empty($this->$qb_key))
 		{
-			foreach ($this->$qb_key as &$qbkey)
+			for ($i = 0, $c = count($this->$qb_key); $i < $c; $i ++)
 			{
 				// Is this condition already compiled?
-				if (is_string($qbkey))
+				if (is_string($this->{$qb_key}[$i]))
 				{
 					continue;
 				}
-				elseif ($qbkey['escape'] === false)
+				elseif ($this->{$qb_key}[$i]['escape'] === false)
 				{
-					$qbkey = $qbkey['condition'];
+					$this->{$qb_key}[$i] = $this->{$qb_key}[$i]['condition'];
 					continue;
 				}
 
 				// Split multiple conditions
 				$conditions = preg_split(
-						'/((?:^|\s+)AND\s+|(?:^|\s+)OR\s+)/i', $qbkey['condition'], -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY
+						'/((?:^|\s+)AND\s+|(?:^|\s+)OR\s+)/i', $this->{$qb_key}[$i]['condition'], -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY
 				);
 
-				foreach ($conditions as &$condition)
+				for ($ci = 0, $cc = count($conditions); $ci < $cc; $ci ++)
 				{
-					if (($op = $this->getOperator($condition)) === false
-							|| ! preg_match('/^(\(?)(.*)(' . preg_quote($op, '/') . ')\s*(.*(?<!\)))?(\)?)$/i', $condition, $matches)
+					if (($op = $this->getOperator($conditions[$ci])) === false
+							|| ! preg_match('/^(\(?)(.*)(' . preg_quote($op, '/') . ')\s*(.*(?<!\)))?(\)?)$/i', $conditions[$ci], $matches)
 					)
 					{
 						continue;
@@ -3113,11 +3096,11 @@ class BaseBuilder
 						$matches[4] = ' ' . $matches[4];
 					}
 
-					$condition = $matches[1] . $this->db->protectIdentifiers(trim($matches[2]))
+					$conditions[$ci] = $matches[1] . $this->db->protectIdentifiers(trim($matches[2]))
 							. ' ' . trim($matches[3]) . $matches[4] . $matches[5];
 				}
 
-				$qbkey = implode('', $conditions);
+				$this->{$qb_key}[$i] = implode('', $conditions);
 			}
 
 			return ($qb_key === 'QBHaving' ? "\nHAVING " : "\nWHERE ")
@@ -3144,16 +3127,16 @@ class BaseBuilder
 	{
 		if (! empty($this->QBGroupBy))
 		{
-			foreach ($this->QBGroupBy as &$groupBy)
+			for ($i = 0, $c = count($this->QBGroupBy); $i < $c; $i ++)
 			{
 				// Is it already compiled?
-				if (is_string($groupBy))
+				if (is_string($this->QBGroupBy[$i]))
 				{
 					continue;
 				}
 
-				$groupBy = ($groupBy['escape'] === false ||
-						$this->isLiteral($groupBy['field'])) ? $groupBy['field'] : $this->db->protectIdentifiers($groupBy['field']);
+				$this->QBGroupBy[$i] = ($this->QBGroupBy[$i]['escape'] === false ||
+						$this->isLiteral($this->QBGroupBy[$i]['field'])) ? $this->QBGroupBy[$i]['field'] : $this->db->protectIdentifiers($this->QBGroupBy[$i]['field']);
 			}
 
 			return "\nGROUP BY " . implode(', ', $this->QBGroupBy);
@@ -3179,14 +3162,14 @@ class BaseBuilder
 	{
 		if (is_array($this->QBOrderBy) && ! empty($this->QBOrderBy))
 		{
-			foreach ($this->QBOrderBy as &$orderBy)
+			for ($i = 0, $c = count($this->QBOrderBy); $i < $c; $i ++)
 			{
-				if ($orderBy['escape'] !== false && ! $this->isLiteral($orderBy['field']))
+				if ($this->QBOrderBy[$i]['escape'] !== false && ! $this->isLiteral($this->QBOrderBy[$i]['field']))
 				{
-					$orderBy['field'] = $this->db->protectIdentifiers($orderBy['field']);
+					$this->QBOrderBy[$i]['field'] = $this->db->protectIdentifiers($this->QBOrderBy[$i]['field']);
 				}
 
-				$orderBy = $orderBy['field'] . $orderBy['direction'];
+				$this->QBOrderBy[$i] = $this->QBOrderBy[$i]['field'] . $this->QBOrderBy[$i]['direction'];
 			}
 
 			return $this->QBOrderBy = "\nORDER BY " . implode(', ', $this->QBOrderBy);

@@ -153,13 +153,6 @@ class URI
 	 */
 	protected $showPassword = false;
 
-	/**
-	 * If true, will continue instead of throwing exceptions.
-	 *
-	 * @var boolean
-	 */
-	protected $silent = false;
-
 	//--------------------------------------------------------------------
 
 	/**
@@ -180,23 +173,6 @@ class URI
 	//--------------------------------------------------------------------
 
 	/**
-	 * If $silent == true, then will not throw exceptions and will
-	 * attempt to continue gracefully.
-	 *
-	 * @param boolean $silent
-	 *
-	 * @return URI
-	 */
-	public function setSilent(bool $silent = true)
-	{
-		$this->silent = $silent;
-
-		return $this;
-	}
-
-	//--------------------------------------------------------------------
-
-	/**
 	 * Sets and overwrites any current URI information.
 	 *
 	 * @param string|null $uri
@@ -211,11 +187,6 @@ class URI
 
 			if ($parts === false)
 			{
-				if ($this->silent)
-				{
-					return $this;
-				}
-
 				throw HTTPException::forUnableToParseURI($uri);
 			}
 
@@ -498,24 +469,23 @@ class URI
 	/**
 	 * Returns the value of a specific segment of the URI path.
 	 *
-	 * @param integer $number  Segment number
-	 * @param string  $default Default value
+	 * @param integer $number
 	 *
 	 * @return string     The value of the segment. If no segment is found,
 	 *                    throws InvalidArgumentError
 	 */
-	public function getSegment(int $number, string $default = ''): string
+	public function getSegment(int $number): string
 	{
 		// The segment should treat the array as 1-based for the user
 		// but we still have to deal with a zero-based array.
 		$number -= 1;
 
-		if ($number > count($this->segments) && ! $this->silent)
+		if ($number > count($this->segments))
 		{
 			throw HTTPException::forURISegmentOutOfRange($number);
 		}
 
-		return $this->segments[$number] ?? $default;
+		return $this->segments[$number] ?? '';
 	}
 
 	/**
@@ -535,11 +505,6 @@ class URI
 
 		if ($number > count($this->segments) + 1)
 		{
-			if ($this->silent)
-			{
-				return $this;
-			}
-
 			throw HTTPException::forURISegmentOutOfRange($number);
 		}
 
@@ -603,7 +568,7 @@ class URI
 
 		if ($path !== '')
 		{
-			$uri .= substr($uri, -1, 1) !== '/' ? '/' . ltrim($path, '/') : ltrim($path, '/');
+			$uri .= substr($uri, -1, 1) !== '/' ? '/' . ltrim($path, '/') : $path;
 		}
 
 		if ($query)
@@ -724,11 +689,6 @@ class URI
 
 		if ($port <= 0 || $port > 65535)
 		{
-			if ($this->silent)
-			{
-				return $this;
-			}
-
 			throw HTTPException::forInvalidPort($port);
 		}
 
@@ -789,11 +749,6 @@ class URI
 	{
 		if (strpos($query, '#') !== false)
 		{
-			if ($this->silent)
-			{
-				return $this;
-			}
-
 			throw HTTPException::forMalformedQueryString();
 		}
 
