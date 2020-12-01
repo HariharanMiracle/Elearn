@@ -463,9 +463,12 @@ address { font-style: italic; }
     margin-bottom: 0px;
     text-align: left;
 }
+.active-link {
+    color: #424242 !important;
+}
 .navbar-nav > li > a {
     font-size: 15px;
-    color: #424242;
+    color: #979595;
     font-weight: bold;
     padding: 53px 20px 50px 20px;
     text-transform: uppercase;

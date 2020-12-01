@@ -87,18 +87,9 @@
                                 </ul>
                             </div>
                             <ul class="wm-adminuser-section">
+                                <li><h6 class="text-white">ADMIN PANEL</h6></li>
                                 <li>
-                                    <?php
-                                        if($_SESSION['isLoggedIn'] == 1){
-                                            ?><a href="#">logout</a><?php
-                                        }
-                                        else{
-                                            ?><a href="#" data-toggle="modal" data-target="#ModalLogin">login</a><?php
-                                        }
-                                    ?>
-                                </li>
-                                <li>
-                                    <a href="#" class="wm-search-btn" data-toggle="modal" data-target="#ModalSearch"><i class="wmicon-search"></i></a>
+                                    <a href="#">logout</a>
                                 </li>
                             </ul>
                         </div>
@@ -129,69 +120,141 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li class="active"><a class="active-link" href="#">Home</a></li>
+                                            <li><a href="#">User</a></li>
+                                            <li><a href="#">News</a></li>
+                                            <li><a href="#">Event</a></li>
+                                            <li><a href="#">Notice</a></li>
+                                            <li><a href="#">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="#">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                        </ul>                                      
+                                      <?php
+                                    }
+                                    else if($nav == "user"){
+                                      ?>
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="#">Home</a></li>
+                                            <li class="active"><a class="active-link" href="#">User</a></li>
+                                            <li><a href="#">News</a></li>
+                                            <li><a href="#">Event</a></li>
+                                            <li><a href="#">Notice</a></li>
+                                            <li><a href="#">Tags</a></li>
+                                            <li><a href="#">E-Books</a></li>
+                                            <li><a href="#">Youtube</a></li>
+                                            <li><a href="#">Courses</a></li>
+                                        </ul>                                      
+                                      <?php
+                                    }
+                                    else if($nav == "news"){
+                                      ?>
+                                        <ul class="nav navbar-nav">
+                                          <li><a href="#">Home</a></li>
+                                          <li><a href="#">User</a></li>
+                                          <li class="active"><a class="active-link" href="#">News</a></li>
+                                          <li><a href="#">Event</a></li>
+                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="#">E-Books</a></li>
+                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="#">Courses</a></li>
+                                        </ul>                                      
+                                      <?php
+                                    }
+                                    else if($nav == "event"){
+                                      ?>
+                                        <ul class="nav navbar-nav">
+                                          <li><a href="#">Home</a></li>
+                                          <li><a href="#">User</a></li>
+                                          <li><a href="#">News</a></li>
+                                          <li class="active"><a class="active-link" href="#">Event</a></li>
+                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="#">E-Books</a></li>
+                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="#">Courses</a></li>
+                                        </ul>                                      
+                                      <?php
+                                    }
+                                    else if($nav == "notice"){
+                                      ?>
+                                        <ul class="nav navbar-nav">
+                                          <li><a href="#">Home</a></li>
+                                          <li><a href="#">User</a></li>
+                                          <li><a href="#">News</a></li>
+                                          <li><a href="#">Event</a></li>
+                                          <li class="active"><a class="active-link" href="#">Notice</a></li>
+                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="#">E-Books</a></li>
+                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="#">Courses</a></li>
+                                        </ul>                                      
+                                      <?php
+                                    }
+                                    else if($nav == "tags"){
+                                      ?>
+                                        <ul class="nav navbar-nav">
+                                          <li><a href="#">Home</a></li>
+                                          <li><a href="#">User</a></li>
+                                          <li><a href="#">News</a></li>
+                                          <li><a href="#">Event</a></li>
+                                          <li><a href="#">Notice</a></li>
+                                          <li class="active"><a class="active-link" href="#">Tags</a></li>
+                                          <li><a href="#">E-Books</a></li>
+                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "ebooks"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
-                                            <li class="active"><a class="active-link" href="#">E-Books</a></li>
-                                            <li><a href="#">Youtube</a></li>
-                                            <li><a href="#">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                          <li><a href="#">Home</a></li>
+                                          <li><a href="#">User</a></li>
+                                          <li><a href="#">News</a></li>
+                                          <li><a href="#">Event</a></li>
+                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="#">Tags</a></li>
+                                          <li class="active"><a class="active-link" href="#">E-Books</a></li>
+                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "youtube"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">E-Books</a></li>
-                                            <li class="active"><a class="active-link" href="#">Youtube</a></li>
-                                            <li><a href="#">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                          <li><a href="#">Home</a></li>
+                                          <li><a href="#">User</a></li>
+                                          <li><a href="#">News</a></li>
+                                          <li><a href="#">Event</a></li>
+                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="#">E-Books</a></li>
+                                          <li class="active"><a class="active-link" href="#">Youtube</a></li>
+                                          <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
-                                    else if($nav == "courses"){
+                                    else {
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">E-Books</a></li>
-                                            <li><a href="#">Youtube</a></li>
-                                            <li class="active"><a class="active-link" href="#">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
-                                        </ul>
+                                          <li><a href="#">Home</a></li>
+                                          <li><a href="#">User</a></li>
+                                          <li><a href="#">News</a></li>
+                                          <li><a href="#">Event</a></li>
+                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="#">E-Books</a></li>
+                                          <li><a href="#">Youtube</a></li>
+                                          <li class="active"><a class="active-link" href="#">Courses</a></li>
+                                        </ul>                                      
                                       <?php
-                                    }
-                                    else{
-                                      ?>
-                                        <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">E-Books</a></li>
-                                            <li><a href="#">Youtube</a></li>
-                                            <li><a href="#">Courses</a></li>
-                                            <li class="active"><a  href="#">Contact</a></li>
-                                        </ul>
-                                      <?php
-                                    }
+                                    }                                                                            
                                   ?>
                                 </div>
                             </nav>
                             <!--// Navigation \\-->
-                            <?php
-                                if($_SESSION['isLoggedIn'] == 1){
-                                    ?><a href="#" class="wm-header-btn">My Profile</a><?php
-                                }
-                                else{
-                                    ?><a href="#" class="wm-header-btn">Register</a><?php
-                                }
-                            ?>
                         </div>
                     </div>
                 </div>
