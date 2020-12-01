@@ -86,6 +86,9 @@
     margin: 0;
     padding: 0;
 }
+.text-white {
+    color: white;
+}
 body {
     background-color: #ffffff;
     color: #424242;

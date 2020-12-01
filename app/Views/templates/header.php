@@ -7,7 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Title</title>
+    <title>
+        <?php
+            foreach($setting as $settingObj){
+                if($settingObj['tkey'] == 'title'){
+                    echo $settingObj['value'];
+                    break;
+                }
+            }
+        ?>
+    </title>
 
     <!-- Css Files -->
     <link href="<?php echo base_url().'/design/css/bootstrap.css'; ?>" rel="stylesheet">
@@ -43,12 +52,40 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="wm-language"> <ul> <li><a href="#">English</a></li> <li><a href="#">español</a></li> </ul> </div>
-                            <ul class="wm-stripinfo">
-                                <li><i class="wmicon-location"></i> 2925 Swick Hill Street, Charlotte, NC 28202</li>
-                                <li><i class="wmicon-technology4"></i> +1 984-700-7129</li>
-                                <li><i class="wmicon-clock2"></i> Mon - fri: 7:00am - 6:00pm</li>
-                            </ul>
+                            <div class="wm-language">
+                                <ul class="wm-stripinfo">
+                                    <li><i class="wmicon-location"></i> 
+                                        <?php
+                                            foreach($setting as $settingObj){
+                                                if($settingObj['tkey'] == 'address'){
+                                                    echo $settingObj['value'];
+                                                    break;
+                                                }
+                                            }
+                                        ?>
+                                    </li>
+                                    <li><i class="wmicon-technology4"></i>
+                                        <?php
+                                            foreach($setting as $settingObj){
+                                                if($settingObj['tkey'] == 'phone'){
+                                                    echo $settingObj['value'];
+                                                    break;
+                                                }
+                                            }
+                                        ?>
+                                    </li>
+                                    <li><i class="wmicon-clock2"></i>
+                                        <?php
+                                            foreach($setting as $settingObj){
+                                                if($settingObj['tkey'] == 'classTime'){
+                                                    echo $settingObj['value'];
+                                                    break;
+                                                }
+                                            }
+                                        ?>
+                                    </li>
+                                </ul>
+                            </div>
                             <ul class="wm-adminuser-section">
                                 <li>
                                     <a href="#" data-toggle="modal" data-target="#ModalLogin">login</a>
