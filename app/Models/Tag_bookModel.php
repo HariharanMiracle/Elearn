@@ -2,8 +2,8 @@
 use CodeIgniter\Database\ConnectionInterface;
 use CodeIgniter\Model;
  
-class EventsModel extends Model
+class Tag_bookModel extends Model
 {
-    protected $table = 'events';
+    protected $table = 'tag_book';
     protected $allowedFields = ['bookId','tagId'];
 }
