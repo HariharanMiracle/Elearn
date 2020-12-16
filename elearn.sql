@@ -1,126 +1,137 @@
--- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Dec 04, 2020 at 01:56 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+/*
+SQLyog Ultimate v12.4.3 (64 bit)
+MySQL - 5.5.41 : Database - elearn
+*********************************************************************
+*/
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+/*!40101 SET NAMES utf8 */;
 
+/*!40101 SET SQL_MODE=''*/;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`elearn` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
---
--- Database: `elearn`
---
+USE `elearn`;
 
--- --------------------------------------------------------
+/*Table structure for table `books` */
 
---
--- Table structure for table `books`
---
+DROP TABLE IF EXISTS `books`;
 
 CREATE TABLE `books` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) NOT NULL,
-  `pdf` varchar(500) NOT NULL
+  `pdf` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+/*Data for the table `books` */
 
---
--- Table structure for table `events`
---
+/*Table structure for table `course` */
+
+DROP TABLE IF EXISTS `course`;
+
+CREATE TABLE `course` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `description` varchar(5000) DEFAULT NULL,
+  `image` varchar(5000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `course` */
+
+/*Table structure for table `events` */
+
+DROP TABLE IF EXISTS `events`;
 
 CREATE TABLE `events` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) NOT NULL,
   `image` varchar(200) NOT NULL,
   `link` varchar(500) NOT NULL,
   `eventDate` date NOT NULL,
   `eventTime` time NOT NULL,
-  `postedOn` date NOT NULL
+  `postedOn` date NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+/*Data for the table `events` */
 
---
--- Table structure for table `notice`
---
+/*Table structure for table `notice` */
+
+DROP TABLE IF EXISTS `notice`;
 
 CREATE TABLE `notice` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) NOT NULL,
   `image` varchar(200) NOT NULL,
   `description` varchar(5000) NOT NULL,
-  `postedOn` date NOT NULL
+  `postedOn` date NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+/*Data for the table `notice` */
 
---
--- Table structure for table `setting`
---
+/*Table structure for table `setting` */
+
+DROP TABLE IF EXISTS `setting`;
 
 CREATE TABLE `setting` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `tkey` varchar(100) NOT NULL,
-  `value` varchar(5000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `value` varchar(5000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `setting`
---
+/*Data for the table `setting` */
 
-INSERT INTO `setting` (`id`, `tkey`, `value`) VALUES
-(1, 'address', 'Address'),
-(2, 'phone', '0776318136'),
-(3, 'company', 'Company'),
-(4, 'classTime', 'Mon - fri: 7:00am - 6:00pm'),
-(5, 'title', 'title'),
-(6, 'phone1', '0779784296'),
-(7, 'email', 'mailto:name@email.com'),
-(8, 'text-email', 'info@university.com');
+insert  into `setting`(`id`,`tkey`,`value`) values (1,'address','Address');
+insert  into `setting`(`id`,`tkey`,`value`) values (2,'phone','0776318136');
+insert  into `setting`(`id`,`tkey`,`value`) values (3,'company','Company');
+insert  into `setting`(`id`,`tkey`,`value`) values (4,'classTime','Mon - fri: 7:00am - 6:00pm');
+insert  into `setting`(`id`,`tkey`,`value`) values (5,'title','title');
+insert  into `setting`(`id`,`tkey`,`value`) values (6,'phone1','0779784296');
+insert  into `setting`(`id`,`tkey`,`value`) values (7,'email','mailto:name@email.com');
+insert  into `setting`(`id`,`tkey`,`value`) values (8,'text-email','info@university.com');
 
--- --------------------------------------------------------
+/*Table structure for table `tag_book` */
 
---
--- Table structure for table `tags`
---
-
-CREATE TABLE `tags` (
-  `id` int(10) NOT NULL,
-  `name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tag_book`
---
+DROP TABLE IF EXISTS `tag_book`;
 
 CREATE TABLE `tag_book` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `bookId` int(10) NOT NULL,
-  `tagId` int(10) NOT NULL
+  `tagId` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_books_bookId` (`bookId`),
+  KEY `fk_tags_tagId` (`tagId`),
+  CONSTRAINT `fk_books_bookId` FOREIGN KEY (`bookId`) REFERENCES `books` (`id`),
+  CONSTRAINT `fk_tags_tagId` FOREIGN KEY (`tagId`) REFERENCES `tags` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+/*Data for the table `tag_book` */
 
---
--- Table structure for table `user`
---
+/*Table structure for table `tags` */
+
+DROP TABLE IF EXISTS `tags`;
+
+CREATE TABLE `tags` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tags` */
+
+/*Table structure for table `user` */
+
+DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -129,140 +140,27 @@ CREATE TABLE `user` (
   `contact` varchar(14) NOT NULL,
   `dob` date NOT NULL,
   `privilege` varchar(25) NOT NULL,
-  `status` varchar(25) NOT NULL
+  `status` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+/*Data for the table `user` */
 
---
--- Table structure for table `videos`
---
+/*Table structure for table `videos` */
+
+DROP TABLE IF EXISTS `videos`;
 
 CREATE TABLE `videos` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) NOT NULL,
   `link` varchar(500) NOT NULL,
-  `postedOn` date NOT NULL
+  `postedOn` date NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for dumped tables
---
+/*Data for the table `videos` */
 
---
--- Indexes for table `books`
---
-ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `events`
---
-ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `notice`
---
-ALTER TABLE `notice`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `setting`
---
-ALTER TABLE `setting`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tags`
---
-ALTER TABLE `tags`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tag_book`
---
-ALTER TABLE `tag_book`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_books_bookId` (`bookId`),
-  ADD KEY `fk_tags_tagId` (`tagId`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `videos`
---
-ALTER TABLE `videos`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `books`
---
-ALTER TABLE `books`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `events`
---
-ALTER TABLE `events`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `notice`
---
-ALTER TABLE `notice`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `setting`
---
-ALTER TABLE `setting`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `tags`
---
-ALTER TABLE `tags`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tag_book`
---
-ALTER TABLE `tag_book`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `videos`
---
-ALTER TABLE `videos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `tag_book`
---
-ALTER TABLE `tag_book`
-  ADD CONSTRAINT `fk_books_bookId` FOREIGN KEY (`bookId`) REFERENCES `books` (`id`),
-  ADD CONSTRAINT `fk_tags_tagId` FOREIGN KEY (`tagId`) REFERENCES `tags` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

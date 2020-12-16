@@ -46,7 +46,6 @@
     <![endif]-->
   </head>
   <body>
-	
     <!--// Main Wrapper \\-->
     <div class="wm-main-wrapper">
         
@@ -96,7 +95,7 @@
                                 <li>
                                     <?php
                                         if($_SESSION['isLoggedIn'] == 1){
-                                            ?><a href="#">logout</a><?php
+                                            ?><a href="<?php echo base_url('User/logout'); ?>">logout</a><?php
                                         }
                                         else{
                                             ?><a href="#" data-toggle="modal" data-target="#ModalLogin">login</a><?php
@@ -112,6 +111,20 @@
                 </div>
             </div>
             <!--// TopStrip \\-->
+
+    <!-- error message start -->
+    <?php
+        if($_SESSION['errLoginMsg'] != ""){
+            ?>
+                <div class="bg-danger row">
+                    <div class="col-md-12" style="margin-top: 7px;">
+                        <h5 class="text-danger">&nbsp;&nbsp;&nbsp;Error: <?php echo $_SESSION['errLoginMsg']; ?></h5>
+                    </div>
+                </div>      
+            <?php
+        }
+    ?>
+    <!-- error message end -->
 
             <!--// MainHeader \\-->
             <div class="wm-main-header">
@@ -134,7 +147,7 @@
                                     if($nav == "home"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li class="active"><a class="active-link" href="#">Home</a></li>
+                                            <li class="active"><a class="active-link" href="<?php echo base_url() ?>">Home</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="#">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
@@ -145,7 +158,7 @@
                                     else if($nav == "ebooks"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
+                                            <li><a href="<?php echo base_url() ?>">Home</a></li>
                                             <li class="active"><a class="active-link" href="#">E-Books</a></li>
                                             <li><a href="#">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
@@ -156,7 +169,7 @@
                                     else if($nav == "youtube"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
+                                            <li><a href="<?php echo base_url() ?>">Home</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li class="active"><a class="active-link" href="#">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
@@ -167,7 +180,7 @@
                                     else if($nav == "courses"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
+                                            <li><a href="<?php echo base_url() ?>">Home</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="#">Youtube</a></li>
                                             <li class="active"><a class="active-link" href="#">Courses</a></li>
@@ -178,7 +191,7 @@
                                     else{
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
+                                            <li><a href="<?php echo base_url() ?>">Home</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="#">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
@@ -195,7 +208,7 @@
                                     ?><a href="#" class="wm-header-btn">My Profile</a><?php
                                 }
                                 else{
-                                    ?><a href="#" class="wm-header-btn">Register</a><?php
+                                    ?><a href="<?php echo base_url('User/register') ?>" class="wm-header-btn">Register</a><?php
                                 }
                             ?>
                         </div>
