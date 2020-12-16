@@ -133,8 +133,9 @@
                 <form action="<?php echo base_url('User/login');?>" name="user_login" id="user_login" method="post" accept-charset="utf-8">
                     <ul>
                         <li> <input id="username" name="username" type="text" value="Your Username" onblur="if(this.value == '') { this.value ='Your Username'; }" onfocus="if(this.value =='Your Username') { this.value = ''; }"> </li>
-                        <li> <input id="password" name="password" type="password" value="password" onblur="if(this.value == '') { this.value ='password'; }" onfocus="if(this.value =='password') { this.value = ''; }"> </li>
+                        <li> <input id="loginPassword" name="password" type="password" value="password" onblur="if(this.value == '') { this.value ='password'; }" onfocus="if(this.value =='password') { this.value = ''; }"> </li>
                         <!-- <li> <a href="#" class="wm-forgot-btn">Forgot Password?</a> </li> -->
+                        <button class="btn-link" onclick="show_login_password()">Show password</button>
                         <li> <input type="submit" value="Sign In"> </li>
                     </ul>
                 </form>
@@ -190,3 +191,39 @@
 
 <!--  15:20  -->
 </html>
+
+<script type="text/javascript">
+    function show_login_password(){
+        var x = document.getElementById("loginPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        }
+        else {
+            x.type = "password";
+        } 
+    }
+
+    function closeLoginError(){
+        document.getElementById("loginError").style.display = "none";
+        <?php $_SESSION['errLoginMsg'] = ""; ?>
+    }
+</script>
+
+<style>
+    .close {
+        font-weight: 900;
+        color: #962020;
+        font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        margin-top: 13px;
+        right: 0%;
+        padding: 10px 14px;
+        transform: translate(0%, -50%);
+    }
+
+    .close:hover {
+        background: #b36060;
+        color: red;
+    }
+</style>

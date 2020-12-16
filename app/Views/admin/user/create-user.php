@@ -1,6 +1,7 @@
 <br/>
 <div class="container">
     <h2>Create User</h2>
+    <span id="create_user_form_err" style="color:red;">*</span>
     <hr/>
     <!-- form begin -->
     <form action="<?php echo base_url('User/adminStore');?>" name="user_create" id="user_create" method="post" accept-charset="utf-8" onsubmit="return validateForm()">
@@ -96,3 +97,103 @@
     <!-- form end -->
 </div>
 <br/>
+
+<script type="text/javascript">
+    
+    var passwordS = false;
+    var repasswordS = false;
+    var contactS = false;
+    var privilegeS = false;
+    
+    function ifContact(contact){
+        var numbers = /^[0-9]+$/;
+
+        if(contact.match(numbers)){
+            if(contact.length == 10){
+                document.getElementById("contact_err").innerHTML = "*";
+                contactS = true;
+            }
+            else{
+                document.getElementById("contact_err").innerHTML = "Contact should be 10 digit and numeric only";
+                contactS = false;
+            }
+        }
+        else{
+            document.getElementById("contact_err").innerHTML = "Contact should be 10 digit and numeric only";
+            contactS = false;
+        }
+    }
+
+    function f_pasword(){
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        }
+        else {
+            x.type = "password";
+        } 
+    }
+
+    function f_re_pasword(){
+        var x = document.getElementById("repassword");
+        if (x.type === "password") {
+            x.type = "text";
+        }
+        else {
+            x.type = "password";
+        }
+    }
+
+    function chkPassword(){
+        var password = document.getElementById("password").value;
+        var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+
+        if(password.match(strongRegex)){
+            document.getElementById("sp-password").innerHTML = "*";
+            passwordS = true;
+        }
+        else{
+            document.getElementById("sp-password").innerHTML = "must contain at least one digit, one upper case, one special symbol and minimum of 8 character";
+            passwordS = false;
+        }
+
+        chkRePassword();
+    }
+
+    function chkRePassword(){
+        var password = document.getElementById("password").value;
+        var repassword = document.getElementById("repassword").value;
+
+        if(password == repassword){
+            document.getElementById("sp-repassword").innerHTML = "*";
+            repasswordS = true;
+        }
+        else{
+            document.getElementById("sp-repassword").innerHTML = "Re-typed password doesn't match";
+            repasswordS = false;
+        }
+    }
+
+    function ifPrivilege(privilege){
+        if(priviliege == ""){
+            document.getElementById("sp-repassword").innerHTML = "Please choose a privilege option";
+            privilegeS = false;
+        }
+        else{
+            document.getElementById("sp-repassword").innerHTML = "*";
+            privilegeS = true;
+        }
+    }
+
+    function validateForm(){
+        if(passwordS == true && repasswordS == true && contactS == true && privilegeS == true){
+            document.getElementById("create_user_form_err").innerHTML = "";
+            return true;
+        }
+        else{
+            document.getElementById("create_user_form_err").innerHTML = "Fields invalid !!!";
+            return false;
+        }
+    }
+
+</script>

@@ -112,13 +112,18 @@
             </div>
             <!--// TopStrip \\-->
 
+    <br/>
+    <!-- <br/> -->
     <!-- error message start -->
     <?php
         if($_SESSION['errLoginMsg'] != ""){
             ?>
-                <div class="bg-danger row">
-                    <div class="col-md-12" style="margin-top: 7px;">
+                <div id="loginError" class="bg-danger row" style="border: 1px solid red; margin-top: 33px;">
+                    <div class="col-md-10" style="margin-top: 7px;">
                         <h5 class="text-danger">&nbsp;&nbsp;&nbsp;Error: <?php echo $_SESSION['errLoginMsg']; ?></h5>
+                    </div>
+                    <div class="col-md-2" style="margin-top: 7px;">
+                        <h5 onclick="closeLoginError()" class="close">x</h5>
                     </div>
                 </div>      
             <?php
