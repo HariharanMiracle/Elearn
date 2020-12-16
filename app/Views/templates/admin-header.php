@@ -95,7 +95,7 @@
                             <ul class="wm-adminuser-section">
                                 <li><h6 class="text-white">ADMIN PANEL</h6></li>
                                 <li>
-                                    <a href="#">logout</a>
+                                    <a href="<?php echo base_url('User/logout'); ?>">logout</a>
                                 </li>
                             </ul>
                         </div>
@@ -125,7 +125,7 @@
                                     if($nav == "home"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li class="active"><a class="active-link" href="#">Home</a></li>
+                                            <li class="active"><a class="active-link" href="<?php echo base_url() ?>">Home</a></li>
                                             <li><a href="#">User</a></li>
                                             <li><a href="#">News</a></li>
                                             <li><a href="#">Event</a></li>
@@ -140,7 +140,7 @@
                                     else if($nav == "user"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="#">Home</a></li>
+                                            <li><a href="<?php echo base_url() ?>">Home</a></li>
                                             <li class="active"><a class="active-link" href="#">User</a></li>
                                             <li><a href="#">News</a></li>
                                             <li><a href="#">Event</a></li>
@@ -155,7 +155,7 @@
                                     else if($nav == "news"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="#">Home</a></li>
+                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li class="active"><a class="active-link" href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
@@ -170,7 +170,7 @@
                                     else if($nav == "event"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="#">Home</a></li>
+                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li class="active"><a class="active-link" href="#">Event</a></li>
@@ -185,7 +185,7 @@
                                     else if($nav == "notice"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="#">Home</a></li>
+                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
@@ -200,7 +200,7 @@
                                     else if($nav == "tags"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="#">Home</a></li>
+                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
@@ -215,7 +215,7 @@
                                     else if($nav == "ebooks"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="#">Home</a></li>
+                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
@@ -230,7 +230,7 @@
                                     else if($nav == "youtube"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="#">Home</a></li>
+                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
@@ -245,7 +245,7 @@
                                     else {
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="#">Home</a></li>
+                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>

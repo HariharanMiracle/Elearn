@@ -7,11 +7,8 @@ class Home extends BaseController
 	public function index() {
 		session()->start();
 		
-		$_SESSION['isLoggedIn'] == 0;
-
 		$settingModel = new SettingModel();
 	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
-
 		$data['nav'] = "home";
 
 		echo view('templates/header', $data);
