@@ -132,7 +132,7 @@
                                             <li><a href="#">Notice</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
-                                            <li><a href="#">Youtube</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -147,7 +147,7 @@
                                             <li><a href="#">Notice</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
-                                            <li><a href="#">Youtube</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -162,7 +162,7 @@
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
-                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -177,7 +177,7 @@
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
-                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -192,7 +192,7 @@
                                           <li class="active"><a class="active-link" href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
-                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -207,7 +207,7 @@
                                           <li><a href="#">Notice</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
-                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -222,7 +222,7 @@
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li class="active"><a class="active-link" href="#">E-Books</a></li>
-                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -237,7 +237,7 @@
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
-                                          <li class="active"><a class="active-link" href="#">Youtube</a></li>
+                                          <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
@@ -252,7 +252,7 @@
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
-                                          <li><a href="#">Youtube</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
                                           <li class="active"><a class="active-link" href="#">Courses</a></li>
                                         </ul>                                      
                                       <?php
