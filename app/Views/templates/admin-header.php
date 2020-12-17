@@ -125,12 +125,12 @@
                                     if($nav == "home"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li class="active"><a class="active-link" href="<?php echo base_url() ?>">Home</a></li>
+                                            <li class="active"><a class="active-link" href="<?php echo base_url(); ?>">Home</a></li>
                                             <li><a href="#">User</a></li>
                                             <li><a href="#">News</a></li>
                                             <li><a href="#">Event</a></li>
                                             <li><a href="#">Notice</a></li>
-                                            <li><a href="#">Tags</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="#">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
@@ -140,12 +140,12 @@
                                     else if($nav == "user"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                            <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                             <li class="active"><a class="active-link" href="#">User</a></li>
                                             <li><a href="#">News</a></li>
                                             <li><a href="#">Event</a></li>
                                             <li><a href="#">Notice</a></li>
-                                            <li><a href="#">Tags</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="#">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
@@ -155,12 +155,12 @@
                                     else if($nav == "news"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li class="active"><a class="active-link" href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
                                           <li><a href="#">Notice</a></li>
-                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="#">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
@@ -170,12 +170,12 @@
                                     else if($nav == "event"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li class="active"><a class="active-link" href="#">Event</a></li>
                                           <li><a href="#">Notice</a></li>
-                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="#">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
@@ -185,12 +185,12 @@
                                     else if($nav == "notice"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
                                           <li class="active"><a class="active-link" href="#">Notice</a></li>
-                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="#">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
@@ -200,12 +200,12 @@
                                     else if($nav == "tags"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
                                           <li><a href="#">Notice</a></li>
-                                          <li class="active"><a class="active-link" href="#">Tags</a></li>
+                                          <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="#">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
@@ -215,12 +215,12 @@
                                     else if($nav == "ebooks"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
                                           <li><a href="#">Notice</a></li>
-                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li class="active"><a class="active-link" href="#">E-Books</a></li>
                                           <li><a href="#">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
@@ -230,12 +230,12 @@
                                     else if($nav == "youtube"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
                                           <li><a href="#">Notice</a></li>
-                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li class="active"><a class="active-link" href="#">Youtube</a></li>
                                           <li><a href="#">Courses</a></li>
@@ -245,12 +245,12 @@
                                     else {
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url() ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="#">Event</a></li>
                                           <li><a href="#">Notice</a></li>
-                                          <li><a href="#">Tags</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="#">Youtube</a></li>
                                           <li class="active"><a class="active-link" href="#">Courses</a></li>
