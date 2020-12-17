@@ -128,7 +128,7 @@
                                             <li class="active"><a class="active-link" href="<?php echo base_url(); ?>">Home</a></li>
                                             <li><a href="#">User</a></li>
                                             <li><a href="#">News</a></li>
-                                            <li><a href="#">Event</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                             <li><a href="#">Notice</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
@@ -143,7 +143,7 @@
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                             <li class="active"><a class="active-link" href="#">User</a></li>
                                             <li><a href="#">News</a></li>
-                                            <li><a href="#">Event</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                             <li><a href="#">Notice</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
@@ -158,7 +158,7 @@
                                           <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li class="active"><a class="active-link" href="#">News</a></li>
-                                          <li><a href="#">Event</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
@@ -167,13 +167,13 @@
                                         </ul>                                      
                                       <?php
                                     }
-                                    else if($nav == "event"){
+                                    else if($nav == "events"){
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
-                                          <li class="active"><a class="active-link" href="#">Event</a></li>
+                                          <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
@@ -188,7 +188,7 @@
                                           <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
-                                          <li><a href="#">Event</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li class="active"><a class="active-link" href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
@@ -203,7 +203,7 @@
                                           <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
-                                          <li><a href="#">Event</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="#">Notice</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
@@ -218,7 +218,7 @@
                                           <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
-                                          <li><a href="#">Event</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li class="active"><a class="active-link" href="#">E-Books</a></li>
@@ -233,7 +233,7 @@
                                           <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
-                                          <li><a href="#">Event</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
@@ -248,7 +248,7 @@
                                           <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
-                                          <li><a href="#">Event</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="#">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>

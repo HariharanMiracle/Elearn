@@ -5,5 +5,5 @@ use CodeIgniter\Model;
 class EventsModel extends Model
 {
     protected $table = 'events';
-    protected $allowedFields = ['title','image','link','eventDate','eventTime','postedOn'];
+    protected $allowedFields = ['title','image','link','eventDate','eventTime','postedOn','meetingId','passcode','timeZone'];
 }
