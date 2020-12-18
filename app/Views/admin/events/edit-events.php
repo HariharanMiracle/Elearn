@@ -14,7 +14,7 @@
                 <input type="file" name="image" class="form-control" id="image">
             </div>
 
-            <div class="container" style="">
+            <div class="container">
                 <h5 class="text-danger">If you want to change the picture upload another one...</h5>
                 <img src="<?php echo base_url().'/uploads/images/events/'.$events['image']; ?>" height="400" width="400"/>
             </div>

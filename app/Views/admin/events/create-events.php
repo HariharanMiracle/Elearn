@@ -1,7 +1,7 @@
 <main class="container">
     <h3>Add Events</h3>
 	<div class="container">
-		<form action="<?php echo base_url('Events/store');?>" name="videos_create" id="videos_create" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+		<form action="<?php echo base_url('Events/store');?>" name="events_create" id="events_create" method="post" accept-charset="utf-8" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Title <span id="title_err" style="color:red;">*</span></label>
                 <input type="text" name="title" class="form-control" id="title" placeholder="Please enter title" required>

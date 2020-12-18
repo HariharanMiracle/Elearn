@@ -129,7 +129,7 @@
                                             <li><a href="#">User</a></li>
                                             <li><a href="#">News</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                            <li><a href="#">Notice</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -144,7 +144,7 @@
                                             <li class="active"><a class="active-link" href="#">User</a></li>
                                             <li><a href="#">News</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                            <li><a href="#">Notice</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -159,7 +159,7 @@
                                           <li><a href="#">User</a></li>
                                           <li class="active"><a class="active-link" href="#">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -174,7 +174,7 @@
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -189,7 +189,7 @@
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                          <li class="active"><a class="active-link" href="#">Notice</a></li>
+                                          <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -204,7 +204,7 @@
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -219,7 +219,7 @@
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li class="active"><a class="active-link" href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -234,7 +234,7 @@
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
@@ -249,7 +249,7 @@
                                           <li><a href="#">User</a></li>
                                           <li><a href="#">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
-                                          <li><a href="#">Notice</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
