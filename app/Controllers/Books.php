@@ -2,6 +2,8 @@
  
 use CodeIgniter\Controller;
 use App\Models\BooksModel;
+use App\Models\Tag_bookModel;
+use App\Models\TagsModel;
 use App\Models\SettingModel;
 
 class Books extends Controller{
@@ -32,7 +34,11 @@ class Books extends Controller{
 			$data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
 			$data['nav'] = "books";
 			$booksModel = new BooksModel();
-	        $data['books'] = $booksModel->where('id', $id)->first();
+			$data['books'] = $booksModel->where('id', $id)->first();
+			$tagsModel = new TagsModel();
+			$tag_bookModel = new Tag_bookModel();
+	        $data['tags'] = $tagsModel->orderBy('id', 'ASC')->findAll();
+	        $data['tag_book'] = $tag_bookModel->where('bookId', $id)->orderBy('id', 'ASC')->findAll();
 			echo view('templates/admin-header', $data);
 			echo view('admin/books/edit-books');
 			return view('templates/footer');

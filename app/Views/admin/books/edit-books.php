@@ -19,6 +19,31 @@
             </div>
             <br/>
 
+            <div class="container bg-info">
+                <?php
+                    foreach($tags as $tagsObj){
+                        $status = false;
+                        foreach($tag_book as $tag_bookObj){
+                            if($tag_bookObj['tagId'] == $tagsObj['id']){
+                                $status = true;
+                                echo $tagsObj['name'].' Marked';
+                                echo '<br/>';
+                            }
+                            else{
+                                $status = false;
+                            }
+                        }
+
+                        if($status == false){
+                            echo $tagsObj['name'].' Un Marked';
+                            echo '<br/>';
+                        }
+                    }
+                ?>
+            </div>
+
+            <br/>
+
             <div class="form-group">
             	<button type="submit" id="send_form" class="btn btn-success">Update</button>
             </div> 
