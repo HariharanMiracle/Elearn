@@ -101,7 +101,7 @@ class Notice extends Controller{
 		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
             $noticeModel = new NoticeModel();
             
-            // Load Images
+            // Load Files
 	        $validated = $this->validate([
 	            'image' => [
 	                'uploaded[image]',

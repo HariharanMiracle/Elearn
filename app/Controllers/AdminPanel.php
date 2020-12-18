@@ -8,6 +8,7 @@ use App\Models\EventsModel;
 use App\Models\NoticeModel;
 use App\Models\NewsModel;
 use App\Models\CourseModel;
+use App\Models\BooksModel;
 
 class AdminPanel extends Controller{
     public function index(){
@@ -170,6 +171,29 @@ class AdminPanel extends Controller{
 
 			echo view('templates/admin-header', $data);
 			echo view('admin/course/course');
+			return view('templates/footer');
+		}
+		else{
+			session()->destroy();
+			session()->start();
+			$_SESSION['errLoginMsg'] = "Unauthorized access !!!";
+            return redirect()->to(base_url());
+		}
+	}
+
+	public function books(){
+        session()->start();
+
+		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
+			$settingModel = new SettingModel();
+			$data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+			$data['nav'] = "books";
+
+			$booksModel = new BooksModel();
+	        $data['books'] = $booksModel->orderBy('title', 'ASC')->findAll();
+
+			echo view('templates/admin-header', $data);
+			echo view('admin/books/books');
 			return view('templates/footer');
 		}
 		else{
