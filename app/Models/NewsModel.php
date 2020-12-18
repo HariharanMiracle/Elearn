@@ -4,6 +4,6 @@ use CodeIgniter\Model;
  
 class NewsModel extends Model
 {
-    protected $table = 'course';
+    protected $table = 'news';
     protected $allowedFields = ['title', 'description', 'link', 'image', 'newsDate', 'newsTime', 'postedOn'];
 }

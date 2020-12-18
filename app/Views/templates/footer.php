@@ -227,3 +227,9 @@
         color: red;
     }
 </style>
+
+
+
+<script>
+	initSample();
+</script>
