@@ -14,7 +14,7 @@
 
             <div class="form-group">
                 <label for="description">Description <span id="description_err" style="color:red;">*</span></label>
-                <div name="description" id="editor"></div>
+                <textarea id="editor" name="description"></textarea>
             </div>
 
             <div class="form-group">

@@ -146,7 +146,7 @@
                                     if($nav == "home"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li class="active"><a class="active-link" href="<?php echo base_url(); ?>">Home</a></li>
+                                            <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                             <li><a href="#">User</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -154,14 +154,14 @@
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                            <li><a href="#">Courses</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "user"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                            <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                             <li class="active"><a class="active-link" href="#">User</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -169,14 +169,14 @@
                                             <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                             <li><a href="#">E-Books</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                            <li><a href="#">Courses</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "news"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -184,14 +184,14 @@
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                          <li><a href="#">Courses</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "events"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -199,14 +199,14 @@
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                          <li><a href="#">Courses</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "notice"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -214,14 +214,14 @@
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                          <li><a href="#">Courses</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "tags"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -229,14 +229,14 @@
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                          <li><a href="#">Courses</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "ebooks"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -244,14 +244,14 @@
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li class="active"><a class="active-link" href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                          <li><a href="#">Courses</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else if($nav == "youtube"){
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -259,14 +259,14 @@
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                          <li><a href="#">Courses</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }
                                     else {
                                       ?>
                                         <ul class="nav navbar-nav">
-                                          <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
                                           <li><a href="#">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
@@ -274,7 +274,7 @@
                                           <li><a href="<?php echo base_url('AdminPanel/tags'); ?>">Tags</a></li>
                                           <li><a href="#">E-Books</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/videos'); ?>">Youtube</a></li>
-                                          <li class="active"><a class="active-link" href="#">Courses</a></li>
+                                          <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
                                     }                                                                            

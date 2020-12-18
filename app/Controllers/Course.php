@@ -1,19 +1,19 @@
 <?php namespace App\Controllers;
  
 use CodeIgniter\Controller;
-use App\Models\NewsModel;
+use App\Models\CourseModel;
 use App\Models\SettingModel;
 
-class News extends Controller{
+class Course extends Controller{
 	public function create(){
         session()->start();
 
 		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
 			$settingModel = new SettingModel();
 			$data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
-			$data['nav'] = "news";
+			$data['nav'] = "course";
 			echo view('templates/admin-header', $data);
-			echo view('admin/news/create-news');
+			echo view('admin/course/create-course');
 			return view('templates/footer');
 		}
 		else{
@@ -30,11 +30,11 @@ class News extends Controller{
 		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
 			$settingModel = new SettingModel();
 			$data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
-			$data['nav'] = "news";
-			$newsModel = new NewsModel();
-	        $data['news'] = $newsModel->where('id', $id)->first();
+			$data['nav'] = "course";
+			$courseModel = new CourseModel();
+	        $data['course'] = $courseModel->where('id', $id)->first();
 			echo view('templates/admin-header', $data);
-			echo view('admin/news/edit-news');
+			echo view('admin/course/edit-course');
 			return view('templates/footer');
 		}
 		else{
@@ -49,9 +49,9 @@ class News extends Controller{
         session()->start();
 
 		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
-			$newsModel = new NewsModel();
-	        $data['news'] = $newsModel->where('id', $id)->delete();
-	        return redirect()->to(base_url('/AdminPanel/news'));
+			$courseModel = new CourseModel();
+	        $data['course'] = $courseModel->where('id', $id)->delete();
+	        return redirect()->to(base_url('/AdminPanel/course'));
 		}
 		else{
 			session()->destroy();
@@ -67,13 +67,13 @@ class News extends Controller{
 		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
 			$settingModel = new SettingModel();
 			$data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
-			$data['nav'] = "news";
-			$newsModel = new NewsModel();
+			$data['nav'] = "course";
+			$courseModel = new CourseModel();
 			$search = $this->request->getVar('search');
-			$data['news'] = $newsModel->like('title', $search)->orlike('postedOn', $search)->orlike('newsDate', $search)->orderBy('postedOn', 'DESC')->find();
+			$data['course'] = $courseModel->like('name', $search)->orderBy('name', 'ASC')->find();
 			
 			echo view('Templates/admin-header', $data);
-			echo view('admin/news/news');
+			echo view('admin/course/course');
 			return view('Templates/footer');
 		}
 		else{
@@ -88,7 +88,7 @@ class News extends Controller{
         session()->start();
 
 		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
-            $newsModel = new NewsModel();
+            $courseModel = new CourseModel();
             
             // Load Images
 	        $validated = $this->validate([
@@ -98,24 +98,20 @@ class News extends Controller{
 	                'max_size[image,20000]',
 	            ]
             ]);
-            
+
             if ($validated) {
 	        	$featuredImg = $this->request->getFile('image');
 		        $fileName = $featuredImg->getRandomName();
-		        $featuredImg->move(ROOTPATH . '/uploads/images/news/', $fileName);
+		        $featuredImg->move(ROOTPATH . '/uploads/images/course/', $fileName);
 	        
 	        	$data = [
-		            'title' => $this->request->getVar('title'),
-		            'image' => $fileName,
+		            'name' => $this->request->getVar('name'),
                     'description' => $this->request->getVar('description'),
-                    'link' => $this->request->getVar('link'),
-                    'newsDate' => $this->request->getVar('newsDate'),
-                    'newsTime' => $this->request->getVar('newsTime'),
-		            'postedOn' => date("Y-m-d"),
+                    'image' => $fileName,
                 ];
                 
-				$save = $newsModel->insert($data);
-    	        return redirect()->to(base_url('/AdminPanel/news'));	
+				$save = $courseModel->insert($data);
+    	        return redirect()->to(base_url('/AdminPanel/course'));	
 	        }
 		}
 		else{
@@ -130,7 +126,7 @@ class News extends Controller{
         session()->start();
 
 		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
-			$newsModel = new NewsModel();
+			$courseModel = new CourseModel();
             $id = $this->request->getVar('id');
             
             // Load Images
@@ -145,49 +141,25 @@ class News extends Controller{
             if ($validated) {
 	        	$featuredImg = $this->request->getFile('image');
 		        $fileName = $featuredImg->getRandomName();
-		        $featuredImg->move(ROOTPATH . '/uploads/images/news/', $fileName);
+		        $featuredImg->move(ROOTPATH . '/uploads/images/course/', $fileName);
 
-                $dateTxt = "";
-                if($this->request->getVar('newsDateX') == ""){
-                    $dateTxt = $this->request->getVar('newsDate');
-                }
-                else{
-                    $dateTxt = $this->request->getVar('newsDateX');
-                }
-
-	        	$data = [
-		            'title' => $this->request->getVar('title'),
-		            'image' => $fileName,
+                $data = [
+		            'name' => $this->request->getVar('name'),
                     'description' => $this->request->getVar('description'),
-                    'link' => $this->request->getVar('link'),
-                    'newsDate' => $dateTxt,
-                    'newsTime' => $this->request->getVar('newsTime'),
-		            'postedOn' => date("Y-m-d"),
+                    'image' => $fileName,
                 ];
-                
-    	        $save = $newsModel->update($id, $data);
-    	        return redirect()->to(base_url('/AdminPanel/news'));	
+	        	
+    	        $save = $courseModel->update($id, $data);
+    	        return redirect()->to(base_url('/AdminPanel/course'));	
             }
             else{
-                $dateTxt = "";
-                if($this->request->getVar('newsDateX') == ""){
-                    $dateTxt = $this->request->getVar('newsDate');
-                }
-                else{
-                    $dateTxt = $this->request->getVar('newsDateX');
-                }
-
 	        	$data = [
-		            'title' => $this->request->getVar('title'),
+		            'name' => $this->request->getVar('name'),
                     'description' => $this->request->getVar('description'),
-                    'link' => $this->request->getVar('link'),
-                    'newsDate' => $dateTxt,
-                    'newsTime' => $this->request->getVar('newsTime'),
-		            'postedOn' => date("Y-m-d"),
                 ];
                 
-    	        $save = $newsModel->update($id, $data);
-    	        return redirect()->to(base_url('/AdminPanel/news'));	
+    	        $save = $courseModel->update($id, $data);
+    	        return redirect()->to(base_url('/AdminPanel/course'));	
             }
 		}
 		else{

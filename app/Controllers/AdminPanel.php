@@ -7,6 +7,7 @@ use App\Models\VideosModel;
 use App\Models\EventsModel;
 use App\Models\NoticeModel;
 use App\Models\NewsModel;
+use App\Models\CourseModel;
 
 class AdminPanel extends Controller{
     public function index(){
@@ -143,19 +144,32 @@ class AdminPanel extends Controller{
 			$newsModel = new NewsModel();
 	        $data['news'] = $newsModel->orderBy('postedOn', 'DESC')->findAll();
 
-			$count = 0;
-			foreach($data['news'] as $obj){
-				$subStr1 = substr($obj['description'],0,100);
-				$subStr2 = substr($obj['description'],100,strlen($obj['description']));
-
-				$data['news'][$count]['description1'] = $subStr1;
-				$data['news'][$count]['description2'] = $subStr2;
-
-				$count++;
-			}
-
 			echo view('templates/admin-header', $data);
 			echo view('admin/news/news');
+			return view('templates/footer');
+		}
+		else{
+			session()->destroy();
+			session()->start();
+			$_SESSION['errLoginMsg'] = "Unauthorized access !!!";
+            return redirect()->to(base_url());
+		}
+	}
+
+	
+	public function course(){
+        session()->start();
+
+		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
+			$settingModel = new SettingModel();
+			$data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+			$data['nav'] = "course";
+
+			$courseModel = new CourseModel();
+	        $data['course'] = $courseModel->orderBy('name', 'ASC')->findAll();
+
+			echo view('templates/admin-header', $data);
+			echo view('admin/course/course');
 			return view('templates/footer');
 		}
 		else{
