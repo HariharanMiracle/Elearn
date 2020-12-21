@@ -31,4 +31,17 @@ class Home extends BaseController
 		echo view('home');
 		return view('templates/footer');
 	}
+
+	public function youtube() {
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "youtube";
+
+		$videosModel = new VideosModel();
+	    $data['videos'] = $videosModel->orderBy('postedOn', 'DESC')->findAll();
+
+		echo view('templates/header', $data);
+		echo view('youtube');
+		return view('templates/footer');
+	}
 }
