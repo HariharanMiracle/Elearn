@@ -30,6 +30,7 @@
                                         echo '<th>No</th>';
                                         echo '<th>Title</th>';
                                         echo '<th>Pdf</th>';
+                                        echo '<th>View</th>';
                                         echo '<th>Edit</th>';
                                         echo '<th>Delete</th>';
                                     echo '</tr>';
@@ -43,8 +44,9 @@
                                             echo '<td>'.$count.'</td>';
                                             echo '<td>'.$obj['title'].'</td>';
                                             echo '<td><a class="text-info" href="'.base_url().'/uploads/pdf/books/'.$obj['pdf'].'">'.$obj['title'].'</a></td>';
-                                            echo '<td><a class="a-orange" href="'.base_url().'/Books/edit/'.$obj['id'].'" alt="Edit Category - '.$obj['name'].'"><i class="far fa-edit"></i></a></td>';
-                                            echo '<td><a class="a-orange" href="'.base_url().'/Books/delete/'.$obj['id'].'" alt="Delete Category - '.$obj['name'].'"><i class="far fa-trash-alt"></i></a></td>';
+                                            echo '<td><a class="a-orange" href="'.base_url().'/Books/view/'.$obj['id'].'" alt="View Books - '.$obj['name'].'"><i class="far fa-eye"></i></a></td>';
+                                            echo '<td><a class="a-orange" href="'.base_url().'/Books/edit/'.$obj['id'].'" alt="Edit Books - '.$obj['name'].'"><i class="far fa-edit"></i></a></td>';
+                                            echo '<td><a class="a-orange" href="'.base_url().'/Books/delete/'.$obj['id'].'" alt="Delete Books - '.$obj['name'].'"><i class="far fa-trash-alt"></i></a></td>';
                                         echo '</tr>';
                                         $count++;
                                     }

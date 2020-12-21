@@ -18,27 +18,6 @@
         ?>
     </title>
 
-
-
-
-
-
-    <!-- ck editor -->
-    <script src="<?php echo base_url().'/ckeditor/ckeditor.js'; ?>"></script>
-  	<script src="<?php echo base_url().'/ckeditor/samples/js/sample.js'; ?>"></script>
-    <link rel="stylesheet" href="<?php echo base_url().'/ckeditor/samples/css/samples.css'; ?>">
-    <link rel="stylesheet" href="<?php echo base_url().'/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css'; ?>">
-    <!-- ck editor -->
-
-
-
-
-
-
-
-
-
-
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -67,7 +46,6 @@
     <![endif]-->
   </head>
   <body>
-	
     <!--// Main Wrapper \\-->
     <div class="wm-main-wrapper">
         
@@ -124,6 +102,25 @@
                 </div>
             </div>
             <!--// TopStrip \\-->
+
+    <br/>
+    <!-- <br/> -->
+    <!-- error message start -->
+    <?php
+        if($_SESSION['errLoginMsg'] != ""){
+            ?>
+                <div id="loginError" class="bg-danger row" style="border: 1px solid red; margin-top: 33px;">
+                    <div class="col-md-10" style="margin-top: 7px;">
+                        <h5 class="text-danger">&nbsp;&nbsp;&nbsp;Error: <?php echo $_SESSION['errLoginMsg']; ?></h5>
+                    </div>
+                    <div class="col-md-2" style="margin-top: 7px;">
+                        <h5 onclick="closeLoginError()" class="close">x</h5>
+                    </div>
+                </div>      
+            <?php
+        }
+    ?>
+    <!-- error message end -->
 
             <!--// MainHeader \\-->
             <div class="wm-main-header">
@@ -233,7 +230,7 @@
                                         </ul>                                      
                                       <?php
                                     }
-                                    else if($nav == "ebooks"){
+                                    else if($nav == "books"){
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
@@ -277,11 +274,12 @@
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/course'); ?>">Courses</a></li>
                                         </ul>                                      
                                       <?php
-                                    }                                                                            
+                                    }    
                                   ?>
                                 </div>
                             </nav>
                             <!--// Navigation \\-->
+                            
                         </div>
                     </div>
                 </div>

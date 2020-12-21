@@ -243,8 +243,8 @@
             <div class="row">
                 <h1>Books Read Online</h1>
             </div>
-            <!-- <iframe src="http://flowpaper.com/flipbook/https://flowpaper.com/example.pdf" width="70%" height="800" style="border: none;" allowFullScreen></iframe> -->
-            <iframe src="http://flipbook.flowpaper.com/<?php echo base_url().'/uploads/pdf/abc.pdf'; ?>" width="70%" height="800" style="border: none;" allowFullScreen></iframe>
+            <iframe src="http://flowpaper.com/flipbook/https://flowpaper.com/example.pdf" width="70%" height="800" style="border: none;" allowFullScreen></iframe>
+            <!-- <iframe src="http://flipbook.flowpaper.com/<?php echo base_url().'/uploads/pdf/abc.pdf'; ?>" width="70%" height="800" style="border: none;" allowFullScreen></iframe> -->
                 
             <div style="position:absolute;right:50px;top:0px;width:27%">
                 <h1>Supercharge your PDFs!</h1>
