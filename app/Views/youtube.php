@@ -1,4 +1,19 @@
 <div style="padding: 25px; background-color: #dee0e3;">
+    <div class="row" style="padding: 25px;">
+        <div class="row">
+            <div class="col-12"></div>
+        </div>
+        <div class="col-12" style="margin-top: 30px;">
+            <form action="<?php echo base_url('/Home/youtubeSearch'); ?>" method="post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10"><input type="text" id="title" name="title" placeholder="Search" class="form-control"/></div>
+                        <div class="col-md-2"><input type="submit" class="btn btn-info" value="Search"/></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="row">
     <?php
         $count = 1;
@@ -143,6 +158,14 @@
                 </div>
             <?php
             $count++;
+        }
+
+        if($count == 1){
+            echo '<div class="col-md-12">';
+                echo '<div class="alert alert-warning" role="alert">';
+                    echo 'No Videos Found!';
+                echo '</div>';
+            echo '</div>';
         }
     ?>
     </div>

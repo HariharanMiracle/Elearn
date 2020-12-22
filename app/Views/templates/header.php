@@ -153,18 +153,18 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li class="active"><a class="active-link" href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="#">E-Books</a></li>
+                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
                                             <li><a href="#">Contact</a></li>
                                         </ul>                                      
                                       <?php
                                     }
-                                    else if($nav == "ebooks"){
+                                    else if($nav == "books"){
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li class="active"><a class="active-link" href="#">E-Books</a></li>
+                                            <li class="active"><a class="active-link" href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
                                             <li><a href="#">Contact</a></li>
@@ -175,7 +175,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="#">E-Books</a></li>
+                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li class="active"><a class="active-link" href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
                                             <li><a href="#">Contact</a></li>
@@ -186,7 +186,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="#">E-Books</a></li>
+                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li class="active"><a class="active-link" href="#">Courses</a></li>
                                             <li><a href="#">Contact</a></li>
@@ -197,7 +197,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="#">E-Books</a></li>
+                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="#">Courses</a></li>
                                             <li class="active"><a  href="#">Contact</a></li>

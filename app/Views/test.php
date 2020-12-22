@@ -237,7 +237,7 @@
         <br/>
 
                 
-        http://flipbook.flowpaper.com/<?php echo base_url().'/uploads/pdf/abc.pdf'; ?>
+        <!-- http://flipbook.flowpaper.com/<?php // echo base_url().'/uploads/pdf/abc.pdf'; ?> -->
 
         <div class="container">
             <div class="row">
@@ -258,6 +258,37 @@
             </div> -->
         </div>
 
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+        <div class="container">
+            <div class="row">
+                <h1>Books Read Online</h1>
+            </div>
+            <iframe src="http://flowpaper.com/flipbook/https://darktestdark.000webhostapp.com/CondoLiving.pdf" width="70%" height="800" style="border: none;" allowFullScreen></iframe>
+            <!-- <iframe src="http://flipbook.flowpaper.com/<?php echo base_url().'/uploads/pdf/abc.pdf'; ?>" width="70%" height="800" style="border: none;" allowFullScreen></iframe> -->
+                
+            <div style="position:absolute;right:50px;top:0px;width:27%">
+                <h1>Supercharge your PDFs!</h1>
+                <b>FlowPaper lite</b> is a compact version of the widely used and popular FlowPaper PDF flipbook viewer. Its free to use and an iframe is all you need! Just change its src attribute and point the last part to a PDF you want to display, like so: <pre>&lt;iframe src="http://flipbook.flowpaper.com/[URL to PDF file]"&gt;</pre>
+                <br/><br/>
+                For more information FlowPaper please see <a href="https://flowpaper.com" target="_new">https://flowpaper.com</a>
+            </div>
+
+            <!-- <div class="row">
+                <a href="https://online.flippingbook.com/view/54529/" class="fbo-embed" data-fbo-id="54529" data-fbo-lightbox="yes" data-fbo-width="740px" data-fbo-height="480px" data-fbo-version="1" style="max-width: 100%">Welcome Guide to FlippingBook Online</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=54529"></script>
+            </div> -->
+        </div>
+
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <!-- <div class="container">
             <div class="row">
                 <h1>Books Read Online</h1>

@@ -44,4 +44,51 @@ class Home extends BaseController
 		echo view('youtube');
 		return view('templates/footer');
 	}
+
+	public function youtubeSearch(){
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "youtube";
+
+		$videosModel = new VideosModel();
+		$title = $this->request->getVar('title');
+		if($title == null){
+			$title = "";
+		}
+	    $data['videos'] = $videosModel->like('title', $title)->orderBy('postedOn', 'DESC')->findAll();
+
+		echo view('templates/header', $data);
+		echo view('youtube');
+		return view('templates/footer');
+	}
+
+	public function books() {
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "books";
+
+		$booksModel = new BooksModel();
+	    $data['books'] = $booksModel->orderBy('id', 'DESC')->findAll();
+
+		echo view('templates/header', $data);
+		echo view('books');
+		return view('templates/footer');
+	}
+
+	public function booksSearch() {
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "books";
+
+		$booksModel = new BooksModel();
+		$title = $this->request->getVar('title');
+		if($title == null){
+			$title = "";
+		}
+	    $data['books'] = $booksModel->like('title', $title)->orderBy('id', 'DESC')->findAll();
+
+		echo view('templates/header', $data);
+		echo view('books');
+		return view('templates/footer');
+	}
 }
