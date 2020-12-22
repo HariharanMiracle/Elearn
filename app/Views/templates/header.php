@@ -153,7 +153,7 @@
                                             <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
                                         </ul>                                      
                                       <?php
                                     }
@@ -164,7 +164,7 @@
                                             <li class="active"><a class="active-link" href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
                                         </ul>                                      
                                       <?php
                                     }
@@ -175,7 +175,7 @@
                                             <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li class="active"><a class="active-link" href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
                                         </ul>                                      
                                       <?php
                                     }
@@ -186,18 +186,18 @@
                                             <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li class="active"><a class="active-link" href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
                                         </ul>
                                       <?php
                                     }
-                                    else{
+                                    else {
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
                                             <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
-                                            <li class="active"><a  href="#">Contact</a></li>
+                                            <li class="active"><a class="active-link"    href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
                                         </ul>
                                       <?php
                                     }

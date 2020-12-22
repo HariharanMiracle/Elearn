@@ -127,4 +127,14 @@ class Home extends BaseController
 		echo view('course');
 		return view('templates/footer');
 	}
+
+	public function contact(){
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "contact";
+
+		echo view('templates/header', $data);
+		echo view('contact');
+		return view('templates/footer');
+	}
 }
