@@ -67,6 +67,9 @@ class Home extends BaseController
 	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
 		$data['nav'] = "books";
 
+		$tagsModel = new TagsModel();
+	    $data['tags'] = $tagsModel->orderBy('id', 'DESC')->findAll();
+
 		$booksModel = new BooksModel();
 	    $data['books'] = $booksModel->orderBy('id', 'DESC')->findAll();
 
@@ -86,6 +89,9 @@ class Home extends BaseController
 			$title = "";
 		}
 	    $data['books'] = $booksModel->like('title', $title)->orderBy('id', 'DESC')->findAll();
+
+		$tagsModel = new TagsModel();
+	    $data['tags'] = $tagsModel->orderBy('id', 'DESC')->findAll();
 
 		echo view('templates/header', $data);
 		echo view('books');

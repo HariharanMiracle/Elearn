@@ -10,11 +10,30 @@
                         <div class="col-md-10"><input type="text" id="title" name="title" placeholder="Search" class="form-control"/></div>
                         <div class="col-md-2"><input type="submit" class="btn btn-info" value="Search"/></div>
                     </div>
+                    <br/>
+                    <div class="row">
+                        <?php
+                            $i = 1;
+                            foreach($tags as $tagObj){
+                                if($i % 2 == 0){
+                                    ?>
+                                        <input type="button" class="btn btn-primary" value="<?php echo $tagObj['name']; ?>">
+                                    <?php
+                                }
+                                else{
+                                    ?>
+                                        <input type="button" class="btn btn-warning" value="<?php echo $tagObj['name']; ?>">
+                                    <?php
+                                }
+                                $i++;
+                            }
+                        ?>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-
+    <br/>
     <div class="row">
     <?php
         $count = 1;
