@@ -38,6 +38,15 @@
     <link href="<?php echo base_url().'/design/css/color-four.css'; ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/design/css/responsive.css'; ?>" rel="stylesheet">
 
+
+    <!-- ck editor -->
+    <script src="<?php echo base_url().'/ckeditor/ckeditor.js'; ?>"></script>
+    <script src="<?php echo base_url().'/ckeditor/samples/js/sample.js'; ?>"></script>
+    <link rel="stylesheet" href="<?php // echo base_url().'/ckeditor/samples/css/samples.css'; ?>">
+    <link rel="stylesheet" href="<?php echo base_url().'/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css'; ?>">
+    <!-- ck editor -->
+
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
