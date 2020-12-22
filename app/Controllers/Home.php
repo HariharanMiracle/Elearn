@@ -91,4 +91,34 @@ class Home extends BaseController
 		echo view('books');
 		return view('templates/footer');
 	}
+
+	public function course() {
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "course";
+
+		$courseModel = new CourseModel();
+	    $data['course'] = $courseModel->orderBy('id', 'DESC')->findAll();
+
+		echo view('templates/header', $data);
+		echo view('course');
+		return view('templates/footer');
+	}
+
+	public function courseSearch() {
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "course";
+
+		$courseModel = new CourseModel();
+		$name = $this->request->getVar('name');
+		if($name == null){
+			$name = "";
+		}
+	    $data['course'] = $courseModel->like('name', $name)->orderBy('id', 'DESC')->findAll();
+
+		echo view('templates/header', $data);
+		echo view('course');
+		return view('templates/footer');
+	}
 }
