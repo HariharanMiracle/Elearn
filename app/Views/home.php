@@ -18,7 +18,7 @@
         <hr/>
     </div>
     
-    <div class="row" style="padding: 10px;">
+    <div class="row" style="padding: 25px;">
         <div class="col-md-4 pre-scrollable">
             <div class="row text-center">
                 <h4 style="background-color: #dce0e3; padding: 10px;"><b>News / Updates</b></h4>
@@ -60,7 +60,7 @@
                 foreach ($events as $eventsObj) {
                     ?>
                         <div class="card">
-                            <div class="text-center"  style="background-color: #dce0e3;"><h3><?php echo $eventsObj['title']; ?></h3></div>
+                            <div class="text-center"  style="background-color: #4b4b4f;"><h3 class="text-white"><?php echo $eventsObj['title']; ?></h3></div>
                             <div class="text-center"><?php echo '<img src="'.base_url().'/uploads/images/events/'.$eventsObj['image'].'" class="card-img-top"/>'; ?></div>
                             <div class="card-body">
                                 <h5><b>Zoom Link:</b> <?php echo '<a class="text-info" href="'.$eventsObj['link'].'">'.$eventsObj['link'].'</a>'; ?></h5>
@@ -68,10 +68,10 @@
                                 <h5><b>Passcode:</b> <?php echo $eventsObj['passcode']; ?></h5>
                                 <h5><b>Time Zone:</b> <?php echo $eventsObj['timeZone']; ?></h5>
                             </div>
-                            <div class="card-footer text-center"  style="background-color: #dce0e3; padding: 10px;">
-                            <small class="text-muted"><?php echo '<b>Event Date:</b> '.$eventsObj['eventDate']; ?></small> <b>/</b>
-                            <small class="text-muted"><?php echo '<b>Event Time:</b> '.$eventsObj['eventTime']; ?></small> <b>/</b>
-                            <small class="text-muted"><?php echo '<b>Posted On:</b> '.$eventsObj['postedOn']; ?></small>
+                            <div class="card-footer text-center"  style="background-color: #4b4b4f; padding: 10px;">
+                            <small class="text-white"><?php echo '<b>Event Date:</b> '.$eventsObj['eventDate']; ?></small> <b class="text-white">/</b>
+                            <small class="text-white"><?php echo '<b>Event Time:</b> '.$eventsObj['eventTime']; ?></small> <b class="text-white">/</b>
+                            <small class="text-white"><?php echo '<b>Posted On:</b> '.$eventsObj['postedOn']; ?></small>
                             </div>
                         </div>
                         <br/>
