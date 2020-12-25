@@ -6,7 +6,7 @@
         </div>
     </div>
 
-    <div style="background-color: #5c5a55; padding: 50px; border-radius: 10px;">
+    <div style="background-color: #5c5a55; padding: 50px; border-radius: 10px; border: 2px solid blue;">
         <h5 class="text-white"><b>Address: </b>
         <?php
             foreach($setting as $settingObj){

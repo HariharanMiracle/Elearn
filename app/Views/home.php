@@ -18,22 +18,12 @@
         <hr/>
     </div>
     
-    <div class="row" style="padding: 25px;">
-        <div class="col-md-4 text-center">
-            <h4>News / Updates</h4>
-        </div>
-
-        <div class="col-md-4 text-center">
-            <h4>Events</h4>
-        </div>
-
-        <div class="col-md-4 text-center">
-            <h4>Notice</h4>
-        </div>
-    </div>
-
     <div class="row" style="padding: 10px;">
         <div class="col-md-4 pre-scrollable">
+            <div class="row text-center">
+                <h4 style="background-color: #dce0e3; padding: 10px;"><b>News / Updates</b></h4>
+                <br/>
+            </div>
             <?php
                 $count = 1;
                 foreach ($news as $newsObj) {
@@ -60,7 +50,11 @@
             ?>
         </div>
 
-        <div class="col-md-4 pre-scrollable">
+        <div class="col-md-4 pre-scrollable" style="background-color: #f0f0f5">
+            <div class="row text-center">
+                <h4 style="background-color: #4b4b4f; padding: 10px;" class="text-white"><b>Events</b></h4>
+                <br/>
+            </div>
             <?php
                 $count = 1;
                 foreach ($events as $eventsObj) {
@@ -81,7 +75,7 @@
                             </div>
                         </div>
                         <br/>
-                        <hr/>
+                        <hr />
                         <br/>
                     <?php
                     $count++;
@@ -90,6 +84,10 @@
         </div>
 
         <div class="col-md-4 pre-scrollable">
+            <div class="row text-center">
+                <h4 style="background-color: #dce0e3; padding: 10px;"><b>Notice</b></h4>
+                <br/>
+            </div>
             <?php
                 $count = 1;
                 foreach ($notice as $noticeObj) {
