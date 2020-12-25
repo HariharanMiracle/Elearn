@@ -16,13 +16,17 @@
                             $i = 1;
                             foreach($tags as $tagObj){
                                 if($i % 2 == 0){
+                                    // even primary
                                     ?>
-                                        <input type="button" class="btn btn-primary" value="<?php echo $tagObj['name']; ?>">
+                                        <input type="button" id="<?php echo 'tagBtn'.$tagObj['id']; ?>" class="btn btn-primary" value="<?php echo $tagObj['name']; ?>" onclick="addOrRemove(<?php echo $tagObj['id']; ?>)">
+                                        <input type="hidden" name="<?php echo 'tagOpt'.$tagObj['id']; ?>" id="<?php echo 'tagOpt'.$tagObj['id']; ?>" value="0"/>
                                     <?php
                                 }
                                 else{
+                                    // odd warning
                                     ?>
-                                        <input type="button" class="btn btn-warning" value="<?php echo $tagObj['name']; ?>">
+                                        <input type="button" id="<?php echo 'tagBtn'.$tagObj['id']; ?>" class="btn btn-warning" value="<?php echo $tagObj['name']; ?>" onclick="addOrRemove(<?php echo $tagObj['id']; ?>)">
+                                        <input type="hidden" name="<?php echo 'tagOpt'.$tagObj['id']; ?>" id="<?php echo 'tagOpt'.$tagObj['id']; ?>" value="0"/>
                                     <?php
                                 }
                                 $i++;
@@ -70,3 +74,42 @@
     ?>
     </div>
 </div>
+
+
+<script>
+    function addOrRemove(tagId){
+        var tagOpt = document.getElementById('tagOpt'+tagId).value;
+        var element = document.getElementById("tagBtn" + tagId);
+
+        if(tagOpt == "0"){
+            // not selected
+            document.getElementById('tagOpt'+tagId).value = "1";
+            var x = parseInt(tagId);
+            if(x % 2 == 0){
+                // even primary
+                element.classList.remove("btn-primary");
+                element.classList.add("btn-danger");
+            }
+            else{
+                // odd warning
+                element.classList.remove("btn-warning");
+                element.classList.add("btn-danger");
+            }
+        }
+        else{
+            // selected
+            document.getElementById('tagOpt'+tagId).value = "0";
+            var x = parseInt(tagId);
+            if(x % 2 == 0){
+                // even primary
+                element.classList.remove("btn-danger");
+                element.classList.add("btn-primary");
+            }
+            else{
+                // odd warning
+                element.classList.remove("btn-danger");
+                element.classList.add("btn-warning");
+            }
+        }
+    }
+</script>

@@ -86,7 +86,6 @@
     function addTag(tagId){
         var tags = document.getElementById("tags").value;
         var tagsArr = tags.split(',');
-        console.log(tagsArr);
 
         var hasTag = false;
         // Check tag in the list
@@ -117,7 +116,6 @@
     function removeTag(tagId){
         var tags = document.getElementById("tags").value;
         var tagsArr = tags.split(',');
-        console.log(tagsArr);
 
         var hasTag = false;
         var hasTwoTags = false;

@@ -8,6 +8,7 @@ use App\Models\NoticeModel;
 use App\Models\NewsModel;
 use App\Models\CourseModel;
 use App\Models\BooksModel;
+use App\Models\Tag_bookModel;
 
 class Home extends BaseController
 {
@@ -83,15 +84,50 @@ class Home extends BaseController
 	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
 		$data['nav'] = "books";
 
+		$tag_bookModel = new Tag_bookModel();
+	    $data['tag_book'] = $tag_bookModel->orderBy('id', 'DESC')->findAll();
+
 		$booksModel = new BooksModel();
 		$title = $this->request->getVar('title');
 		if($title == null){
 			$title = "";
 		}
-	    $data['books'] = $booksModel->like('title', $title)->orderBy('id', 'DESC')->findAll();
+		$data['books1'] = $booksModel->like('title', $title)->orderBy('id', 'DESC')->findAll();
 
 		$tagsModel = new TagsModel();
 	    $data['tags'] = $tagsModel->orderBy('id', 'DESC')->findAll();
+
+		// Selected Tag Options
+		$selecetedId = array();
+		$i = 0;
+		foreach($data['tags'] as $tagObj){
+			$option = $this->request->getVar('tagOpt'.$tagObj['id']);
+			if($option != 0){
+				// selected
+				$selecetedId[$i] = $tagObj['id'];
+				$i++;
+			}
+		}
+
+		$data['books'] = array();
+		$c = 0;
+		foreach($data['books1'] as $bookObj){
+			$status = false;
+			foreach($data['tag_book'] as $tag_bookObj){
+				if($bookObj['id'] == $tag_bookObj['bookId']){
+					foreach($selecetedId as $formId){
+						if($formId == $tag_bookObj['tagId']){
+							$status = true;
+						}
+					}
+				}
+			}
+
+			if($status == true){
+				$data['books'][$c] = $bookObj;
+				$c++;
+			}
+		}
 
 		echo view('templates/header', $data);
 		echo view('books');
