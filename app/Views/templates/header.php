@@ -207,7 +207,7 @@
                             <!--// Navigation \\-->
                             <?php
                                 if($_SESSION['isLoggedIn'] == 1){
-                                    ?><a href="#" class="wm-header-btn">My Profile</a><?php
+                                    ?><!-- <a href="#" class="wm-header-btn">My Profile</a> --><?php
                                 }
                                 else{
                                     ?><a href="<?php echo base_url('User/register') ?>" class="wm-header-btn">Register</a><?php
