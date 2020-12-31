@@ -77,7 +77,7 @@ class AdminPanel extends Controller{
             return redirect()->to(base_url());
 		}
 	}
-
+  
 	public function videos(){
         session()->start();
 

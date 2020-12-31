@@ -109,6 +109,7 @@ class Home extends BaseController
 			}
 		}
 
+
 		$data['books'] = array();
 		$c = 0;
 		foreach($data['books1'] as $bookObj){
@@ -129,6 +130,10 @@ class Home extends BaseController
 			}
 		}
 
+		if($state == true){
+			$data['books'] = $data['books1'];
+		}
+    
 		echo view('templates/header', $data);
 		echo view('books');
 		return view('templates/footer');

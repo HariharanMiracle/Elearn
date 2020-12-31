@@ -9,6 +9,7 @@ class User extends Controller{
     public function create(){
         session()->start();
 
+
         if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN"){
             $settingModel = new SettingModel();
             $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
