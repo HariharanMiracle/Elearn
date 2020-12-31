@@ -153,7 +153,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                            <li><a href="#">User</a></li>
+                                            <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -168,7 +168,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                            <li class="active"><a class="active-link" href="#">User</a></li>
+                                            <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                             <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -183,7 +183,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                          <li><a href="#">User</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -198,7 +198,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                          <li><a href="#">User</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -213,7 +213,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                          <li><a href="#">User</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li class="active"><a class="active-link" href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -228,7 +228,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                          <li><a href="#">User</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -243,7 +243,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                          <li><a href="#">User</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -258,7 +258,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                          <li><a href="#">User</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
@@ -273,7 +273,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                           <li><a href="<?php echo base_url('AdminPanel'); ?>">Home</a></li>
-                                          <li><a href="#">User</a></li>
+                                          <li><a href="<?php echo base_url('AdminPanel/user'); ?>">User</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/news'); ?>">News</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/events'); ?>">Events</a></li>
                                           <li><a href="<?php echo base_url('AdminPanel/notice'); ?>">Notice</a></li>
