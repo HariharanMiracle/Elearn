@@ -9,6 +9,12 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Education Home Page1</title>
 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
     <!-- Css Files -->
     <link href="<?php echo base_url().'/design/css/bootstrap.css'; ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/design/css/font-awesome.css'; ?>" rel="stylesheet">
@@ -207,6 +213,92 @@
 
 		</header>
 		<!--// Header \\-->
+
+        <div class="container">
+            <div class="row">
+                <h1>Youtube links</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3">
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3">
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3">
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+                
+        <!-- http://flipbook.flowpaper.com/<?php // echo base_url().'/uploads/pdf/abc.pdf'; ?> -->
+
+        <div class="container">
+            <div class="row">
+                <h1>Books Read Online</h1>
+            </div>
+            <iframe src="http://flowpaper.com/flipbook/https://flowpaper.com/example.pdf" width="70%" height="800" style="border: none;" allowFullScreen></iframe>
+            <!-- <iframe src="http://flipbook.flowpaper.com/<?php echo base_url().'/uploads/pdf/abc.pdf'; ?>" width="70%" height="800" style="border: none;" allowFullScreen></iframe> -->
+                
+            <div style="position:absolute;right:50px;top:0px;width:27%">
+                <h1>Supercharge your PDFs!</h1>
+                <b>FlowPaper lite</b> is a compact version of the widely used and popular FlowPaper PDF flipbook viewer. Its free to use and an iframe is all you need! Just change its src attribute and point the last part to a PDF you want to display, like so: <pre>&lt;iframe src="http://flipbook.flowpaper.com/[URL to PDF file]"&gt;</pre>
+                <br/><br/>
+                For more information FlowPaper please see <a href="https://flowpaper.com" target="_new">https://flowpaper.com</a>
+            </div>
+
+            <!-- <div class="row">
+                <a href="https://online.flippingbook.com/view/54529/" class="fbo-embed" data-fbo-id="54529" data-fbo-lightbox="yes" data-fbo-width="740px" data-fbo-height="480px" data-fbo-version="1" style="max-width: 100%">Welcome Guide to FlippingBook Online</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=54529"></script>
+            </div> -->
+        </div>
+
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+        <div class="container">
+            <div class="row">
+                <h1>Books Read Online</h1>
+            </div>
+            <iframe src="http://flowpaper.com/flipbook/https://darktestdark.000webhostapp.com/CondoLiving.pdf" width="70%" height="800" style="border: none;" allowFullScreen></iframe>
+            <!-- <iframe src="http://flipbook.flowpaper.com/<?php echo base_url().'/uploads/pdf/abc.pdf'; ?>" width="70%" height="800" style="border: none;" allowFullScreen></iframe> -->
+                
+            <div style="position:absolute;right:50px;top:0px;width:27%">
+                <h1>Supercharge your PDFs!</h1>
+                <b>FlowPaper lite</b> is a compact version of the widely used and popular FlowPaper PDF flipbook viewer. Its free to use and an iframe is all you need! Just change its src attribute and point the last part to a PDF you want to display, like so: <pre>&lt;iframe src="http://flipbook.flowpaper.com/[URL to PDF file]"&gt;</pre>
+                <br/><br/>
+                For more information FlowPaper please see <a href="https://flowpaper.com" target="_new">https://flowpaper.com</a>
+            </div>
+
+            <!-- <div class="row">
+                <a href="https://online.flippingbook.com/view/54529/" class="fbo-embed" data-fbo-id="54529" data-fbo-lightbox="yes" data-fbo-width="740px" data-fbo-height="480px" data-fbo-version="1" style="max-width: 100%">Welcome Guide to FlippingBook Online</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=54529"></script>
+            </div> -->
+        </div>
+
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <!-- <div class="container">
+            <div class="row">
+                <h1>Books Read Online</h1>
+            </div>
+            <div class="row">
+            <embed src="<?php //echo base_url().'/uploads/pdf/abc.pdf'; ?>" width="500" height="375">
+                <a href="https://online.flippingbook.com/view/54529/" class="fbo-embed" data-fbo-id="54529" data-fbo-lightbox="yes" data-fbo-width="740px" data-fbo-height="480px" data-fbo-version="1" style="max-width: 100%">Welcome Guide to FlippingBook Online</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=54529"></script>
+                <embed src="http://example.com/the.pdf" width="500" height="375" type="application/pdf">
+            </div>
+        </div> -->
 
 		<!--// Main Banner \\-->
 		<div class="wm-main-banner">
@@ -1092,3 +1184,13 @@
 
 <!--  15:20  -->
 </html>
+
+<style>
+h1{
+  font-family:'Roboto'
+}
+
+body{
+  font-family:'Roboto'
+}
+</style>

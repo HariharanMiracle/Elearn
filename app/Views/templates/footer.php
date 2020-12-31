@@ -122,6 +122,55 @@
     </div>
     <!--// Main Wrapper \\-->
 
+    <!-- ModalLogin Box -->
+    <div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            
+            <div class="wm-modallogin-form wm-login-popup">
+                <span class="wm-color">Login to Your Account</span>
+                <form action="<?php echo base_url('User/login');?>" name="user_login" id="user_login" method="post" accept-charset="utf-8">
+                    <ul>
+                        <li> <input id="username" name="username" type="text" value="Your Username" onblur="if(this.value == '') { this.value ='Your Username'; }" onfocus="if(this.value =='Your Username') { this.value = ''; }"> </li>
+                        <li> <input id="loginPassword" name="password" type="password" value="password" onblur="if(this.value == '') { this.value ='password'; }" onfocus="if(this.value =='password') { this.value = ''; }"> </li>
+                        <!-- <li> <a href="#" class="wm-forgot-btn">Forgot Password?</a> </li> -->
+                        <button class="btn-link" onclick="show_login_password()">Show password</button>
+                        <li> <input type="submit" value="Sign In"> </li>
+                    </ul>
+                </form>
+                <h5 class="text-dark">Not a member yet? <a href = "<?php echo base_url('User/register'); ?>">sign up !!!</a></h5>
+            </div>
+          </div>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+    <!-- ModalLogin Box -->
+
+    <!-- ModalSearch Box -->
+    <div class="modal fade" id="ModalSearch" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            
+            <div class="wm-modallogin-form">
+                <span class="wm-color">Search Your KeyWord</span>
+                <form>
+                    <ul>
+                        <li> <input type="text" value="Keywords..." onblur="if(this.value == '') { this.value ='Keywords...'; }" onfocus="if(this.value =='Keywords...') { this.value = ''; }"> </li>
+                        <li> <input type="submit" value="Search"> </li>
+                    </ul>
+                </form>
+            </div>
+
+          </div>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+    <!-- ModalSearch Box -->
+
 	<!-- jQuery (necessary for JavaScript plugins) -->
 	<script type="text/javascript" src="<?php echo base_url().'/design/script/jquery.js'; ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url().'/design/script/modernizr.js'; ?>"></script>
@@ -142,3 +191,45 @@
 
 <!--  15:20  -->
 </html>
+
+<script type="text/javascript">
+    function show_login_password(){
+        var x = document.getElementById("loginPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        }
+        else {
+            x.type = "password";
+        } 
+    }
+
+    function closeLoginError(){
+        document.getElementById("loginError").style.display = "none";
+        <?php $_SESSION['errLoginMsg'] = ""; ?>
+    }
+</script>
+
+<style>
+    .close {
+        font-weight: 900;
+        color: #962020;
+        font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        margin-top: 13px;
+        right: 0%;
+        padding: 10px 14px;
+        transform: translate(0%, -50%);
+    }
+
+    .close:hover {
+        background: #b36060;
+        color: red;
+    }
+</style>
+
+
+
+<script>
+	initSample();
+</script>

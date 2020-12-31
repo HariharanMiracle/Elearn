@@ -7073,6 +7073,17 @@ button.close {
   position: absolute;
   top: 0;
 }
+.btn-link {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 /* Extra Css */
 .wm-courses-popular-full        { padding: 63px 0px 70px 0px; }
