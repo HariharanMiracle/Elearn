@@ -150,7 +150,12 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li class="active"><a class="active-link" href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                            <li><a href="#">Readings</a>
+                                                <ul class="wm-dropdown-menu">
+                                                    <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                                    <li><a href="<?php echo base_url('/Home/articles'); ?>">Articles</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
                                             <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
@@ -161,18 +166,44 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li class="active"><a class="active-link" href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                            <li class="active"><a class="active-link" href="#">Readings</a>
+                                                <ul class="wm-dropdown-menu">
+                                                    <li class="active"><a class="active-link" href="<?php echo base_url('/Home/books'); ?>"><b>E-Books</b></a></li>
+                                                    <li><a href="<?php echo base_url('/Home/articles'); ?>">Articles</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
                                             <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
                                         </ul>                                      
                                       <?php
                                     }
+                                    else if($nav == "articles"){
+                                        ?>
+                                          <ul class="nav navbar-nav">
+                                              <li><a href="<?php echo base_url(); ?>">Home</a></li>
+                                              <li class="active"><a class="active-link" href="#">Readings</a>
+                                                  <ul class="wm-dropdown-menu">
+                                                      <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                                      <li class="active"><a class="active-link" href="<?php echo base_url('/Home/articles'); ?>"><b>Articles</b></a></li>
+                                                  </ul>
+                                              </li>
+                                              <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
+                                              <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
+                                              <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
+                                          </ul>                                      
+                                        <?php
+                                      }
                                     else if($nav == "youtube"){
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                            <li><a href="#">Readings</a>
+                                                <ul class="wm-dropdown-menu">
+                                                    <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                                    <li><a href="<?php echo base_url('/Home/articles'); ?>">Articles</a></li>
+                                                </ul>
+                                            </li>
                                             <li class="active"><a class="active-link" href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
                                             <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
@@ -183,7 +214,12 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                            <li><a href="#">Readings</a>
+                                                <ul class="wm-dropdown-menu">
+                                                    <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                                    <li><a href="<?php echo base_url('/Home/articles'); ?>">Articles</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li class="active"><a class="active-link" href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
                                             <li><a href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>
@@ -194,7 +230,12 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                            <li><a href="#">Readings</a>
+                                                <ul class="wm-dropdown-menu">
+                                                    <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
+                                                    <li><a href="<?php echo base_url('/Home/articles'); ?>">Articles</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="<?php echo base_url('/Home/youtube'); ?>">Youtube</a></li>
                                             <li><a href="<?php echo base_url('/Home/course'); ?>">Courses</a></li>
                                             <li class="active"><a class="active-link"    href="<?php echo base_url('/Home/contact'); ?>">Contact</a></li>

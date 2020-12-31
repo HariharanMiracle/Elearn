@@ -8,7 +8,9 @@ use App\Models\NoticeModel;
 use App\Models\NewsModel;
 use App\Models\CourseModel;
 use App\Models\BooksModel;
+use App\Models\ArticlesModel;
 use App\Models\Tag_bookModel;
+use App\Models\Tag_articleModel;
 
 class Home extends BaseController
 {
@@ -84,6 +86,7 @@ class Home extends BaseController
 	}
 
 	public function booksSearch() {
+		$state = false;
 		$settingModel = new SettingModel();
 	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
 		$data['nav'] = "books";
@@ -113,6 +116,13 @@ class Home extends BaseController
 			}
 		}
 
+		if(count($selecetedId) == 0){
+			$state = true;
+		}
+		else{
+			$state = false;
+		}
+
 
 		$data['books'] = array();
 		$c = 0;
@@ -135,6 +145,7 @@ class Home extends BaseController
 		}
 
 		if($state == true){
+			$data['books'] = array();
 			$data['books'] = $data['books1'];
 		}
     
@@ -180,6 +191,91 @@ class Home extends BaseController
 
 		echo view('templates/header', $data);
 		echo view('contact');
+		return view('templates/footer');
+	}
+
+	public function articles() {
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "articles";
+
+		$tagsModel = new TagsModel();
+	    $data['tags'] = $tagsModel->orderBy('id', 'DESC')->findAll();
+
+		$articlesModel = new ArticlesModel();
+	    $data['articles'] = $articlesModel->orderBy('id', 'DESC')->findAll();
+
+		echo view('templates/header', $data);
+		echo view('articles');
+		return view('templates/footer');
+	}
+
+	public function articlesSearch() {
+		$state = false;
+		$settingModel = new SettingModel();
+	    $data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+		$data['nav'] = "articles";
+
+		$tag_articleModel = new Tag_articleModel();
+	    $data['tag_article'] = $tag_articleModel->orderBy('id', 'DESC')->findAll();
+
+		$articlesModel = new ArticlesModel();
+		$title = $this->request->getVar('title');
+		if($title == null){
+			$title = "";
+		}
+		$data['articles1'] = $articlesModel->like('title', $title)->orderBy('id', 'DESC')->findAll();
+
+		$tagsModel = new TagsModel();
+	    $data['tags'] = $tagsModel->orderBy('id', 'DESC')->findAll();
+
+		// Selected Tag Options
+		$selecetedId = array();
+		$i = 0;
+		foreach($data['tags'] as $tagObj){
+			$option = $this->request->getVar('tagOpt'.$tagObj['id']);
+			if($option != 0){
+				// selected
+				$selecetedId[$i] = $tagObj['id'];
+				$i++;
+			}
+		}
+
+		if(count($selecetedId) == 0){
+			$state = true;
+		}
+		else{
+			$state = false;
+		}
+
+
+		$data['articles'] = array();
+		$c = 0;
+		foreach($data['articles1'] as $articleObj){
+			$status = false;
+			foreach($data['tag_article'] as $tag_articleObj){
+				if($articleObj['id'] == $tag_articleObj['articleId']){
+					foreach($selecetedId as $formId){
+						if($formId == $tag_articleObj['tagId']){
+							$status = true;
+						}
+					}
+				}
+			}
+
+			if($status == true){
+				$data['articles'][$c] = $articleObj;
+				$c++;
+			}
+		}
+
+		if($state == true){
+			$data['articles'] = array();
+			$data['articles'] = $data['articles1'];
+		}
+    
+		echo view('templates/header', $data);
+		echo view('articles');
 		return view('templates/footer');
 	}
 }
