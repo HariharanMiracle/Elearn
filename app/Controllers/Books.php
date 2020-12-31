@@ -165,7 +165,7 @@ class Books extends Controller{
 						'bookId' => $save,
 						'tagId' => $value,
 					];
-					$save = $tag_bookModel->insert($dataTagBook);
+					$savex = $tag_bookModel->insert($dataTagBook);
 				}
 
     	        return redirect()->to(base_url('/AdminPanel/books'));	

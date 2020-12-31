@@ -69,7 +69,7 @@ class Articles extends Controller{
 			$articlesModel = new ArticlesModel();
 			$data['articles'] = $articlesModel->where('id', $id)->first();
 			$tagsModel = new TagsModel();
-			$tag_articleModel = new Tag_articlesModel();
+			$tag_articleModel = new Tag_articleModel();
 	        $data['tags'] = $tagsModel->orderBy('id', 'ASC')->findAll();
 	        $data['tag_article'] = $tag_articleModel->where('articleId', $id)->orderBy('id', 'ASC')->findAll();
 			echo view('templates/admin-header', $data);
@@ -165,7 +165,7 @@ class Articles extends Controller{
 						'articleId' => $save,
 						'tagId' => $value,
 					];
-					$save = $tag_articleModel->insert($dataTagArticle);
+					$savex = $tag_articleModel->insert($dataTagArticle);
 				}
 
     	        return redirect()->to(base_url('/AdminPanel/articles'));	

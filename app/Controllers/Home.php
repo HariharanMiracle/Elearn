@@ -28,6 +28,10 @@ class Home extends BaseController
 		$noticeModel = new NoticeModel();
 	    $data['notice'] = $noticeModel->orderBy('postedOn', 'DESC')->findAll();
 
+		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
+            return redirect()->to(base_url('AdminPanel'));
+		}
+
 		echo view('templates/header', $data);
 		echo view('home');
 		return view('templates/footer');
