@@ -109,10 +109,6 @@ class Home extends BaseController
 			}
 		}
 
-		$state = false;
-		if(count($selecetedId) == 0){
-			$state = true;
-		}
 
 		$data['books'] = array();
 		$c = 0;
@@ -137,8 +133,7 @@ class Home extends BaseController
 		if($state == true){
 			$data['books'] = $data['books1'];
 		}
-
-		
+    
 		echo view('templates/header', $data);
 		echo view('books');
 		return view('templates/footer');

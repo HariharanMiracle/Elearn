@@ -9,6 +9,7 @@ use App\Models\NoticeModel;
 use App\Models\NewsModel;
 use App\Models\CourseModel;
 use App\Models\BooksModel;
+use App\Models\UserModel;
 
 class AdminPanel extends Controller{
     public function index(){
@@ -54,6 +55,29 @@ class AdminPanel extends Controller{
 		}
 	}
 
+	public function user(){
+        session()->start();
+
+		if($_SESSION['isLoggedIn'] == 1 && $_SESSION['user']['privilege'] == "ADMIN" && $_SESSION['user']['status'] == "ACTIVE"){
+			$settingModel = new SettingModel();
+			$data['setting'] = $settingModel->orderBy('id', 'ASC')->findAll();
+			$data['nav'] = "user";
+
+			$userModel = new UserModel();
+	        $data['user'] = $userModel->orderBy('username', 'ASC')->findAll();
+
+			echo view('templates/admin-header', $data);
+			echo view('admin/user/user');
+			return view('templates/footer');
+		}
+		else{
+			session()->destroy();
+			session()->start();
+			$_SESSION['errLoginMsg'] = "Unauthorized access !!!";
+            return redirect()->to(base_url());
+		}
+	}
+  
 	public function videos(){
         session()->start();
 
