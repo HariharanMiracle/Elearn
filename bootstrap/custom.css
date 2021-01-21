@@ -1,3 +1,11 @@
 .text-blue {
     color: blue;
 }
+
+.bgstyle {
+
+    background: #00416A; 
+    background: -webkit-linear-gradient(to right, #186494, #75a8c9, #9bc4de, #75a8c9, #186494);
+    background: linear-gradient(to right, #186494, #75a8c9, #9bc4de, #75a8c9, #186494); 
+  
+  }

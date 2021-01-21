@@ -5,7 +5,14 @@
                 <div class="container">
                     <div class="row">
                         <aside class="widget widget_contact_info col-md-4">
-                            <a href="index-2.html" class="wm-footer-logo"><img src="<?php echo base_url().'/design/images/logo-1.png'; ?>" alt=""></a>
+                        <div class="col-md-3"><a href="#" class="wm-logo"> 
+                            <div style="border: 1px solid black; border-radius: 5px; width: 280px">
+                                <div class="row text-center">
+                                    <h2><b style="color: #777a80">E-Learning</b> <b style="color:#4998bf">Platform</b></h2>
+                                    <h2 style="color: black; text-weight: bold;">SHANTHIAM</h2>
+                                </div>
+                            </div>
+                         </a></div>
                             <ul>
                                 <li><i class="wm-color wmicon-pin"></i>
                                 <?php
@@ -59,23 +66,30 @@
                                 </li>
                             </ul>
                             <div class="wm-footer-icons">
-                                <a href="#" class="wmicon-social5"></a>
-                                <a href="#" class="wmicon-social4"></a>
-                                <a href="#" class="wmicon-social3"></a>
-                                <a href="#" class="wmicon-vimeo"></a>
+                                <a href="https://www.facebook.com/shanthiaham" class="wmicon-social5"></a>
+                                <a href="https://twitter.com/shanthiham?lang=en" class="wmicon-social4"></a>
+                                <a href="https://www.instagram.com/shanthiham/" class="wmicon-social3"></a>
                             </div>
                         </aside>
                         <aside class="widget widget_twitter col-md-5">
-                            <div class="wm-footer-widget-title"> <h5><i class="wmicon-social2"></i> @enrollcampus</h5> </div>
+                            <div class="wm-footer-widget-title"> <h5>@quotes</h5> </div>
                             <ul>
                                 <li>
-                                    <p>Check Youniverse - Multipurpose PSD Template @ThemeForest: <a href="#">pic.twitter.com/xcVlqJySjq</a></p>
-                                    <time datetime="2008-02-14 20:00" class="wm-color">2 hrs ago</time>
+                                    <p>No one can make you feel inferior without your consent.</p>
+                                    <p><i><a href="https://en.wikipedia.org/wiki/Eleanor_Roosevelt">~ Eleanor Roosevelt (Goodreads; GR)</a></i></p>
+                                </li>
+                                <li>
+                                    <p>If I were to try to read, much less answer, all the attacks made on me, this shop might as well be closed for any other business.</p>
+                                    <p><i><a href="https://en.wikipedia.org/wiki/Abraham_Lincoln">~ Abraham Lincoln (Brainyquote; BQ)</a></i></p>
+                                </li>
+                                <li>
+                                    <p>Our greatest glory is not in never falling, but in rising every time we fall.</p>
+                                    <p><i><a href="https://en.wikipedia.org/wiki/Confucius">~ Confucius (BQ)</a></i></time>
                                 </li>
                             </ul>
                         </aside>
                         <aside class="widget widget_gallery col-md-3">
-                            <div class="wm-footer-widget-title"> <h5>Our Instructors</h5> </div>
+                            <div class="wm-footer-widget-title"> <h5>Our Staffs</h5> </div>
                             <ul class="gallery">
                                 <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-1.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-1.jpg'; ?>" alt=""></a></li>
                                 <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-2.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-2.jpg'; ?>" alt=""></a></li>

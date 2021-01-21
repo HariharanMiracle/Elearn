@@ -135,7 +135,14 @@
             <div class="wm-main-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3"><a href="index-2.html" class="wm-logo"><img src="<?php echo base_url().'/design/images/logo-1.png'; ?>" alt=""></a></div>
+                          <div class="col-md-3"><a href="#" class="wm-logo"> 
+                            <div style="border: 1px solid black; border-radius: 5px; width: 280px">
+                                <div class="row text-center">
+                                    <h2><b style="color: #777a80">E-Learning</b> <b style="color:#4998bf">Platform</b></h2>
+                                    <h2 style="color: black; text-weight: bold;">SHANTHIAM</h2>
+                                </div>
+                            </div>
+                         </a></div>
                         <div class="col-md-9">
                             <!--// Navigation \\-->
                             <nav class="navbar navbar-default">

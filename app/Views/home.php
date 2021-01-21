@@ -1,3 +1,4 @@
+<div class="bgstyle">
 <br/>
 <br/>
 <br/>
@@ -5,12 +6,12 @@
     <div>
         <?php
             if($_SESSION['isLoggedIn'] == 1){
-                echo '<div class="text-center"><h1>Welcome '.$_SESSION['user']['fname'].' '.$_SESSION['user']['lname'].'</h1></div>';
+                echo '<div class="wm-fancy-title"><h2>Welcome '.$_SESSION['user']['fname'].' <span> '.$_SESSION['user']['lname'].'</span></h2></div>';
             }
             else{
                 foreach($setting as $settingObj){
                     if($settingObj['tkey'] == 'company'){
-                        echo '<div class="text-center"><h1>Welcome to '.$settingObj['value'].'</h1></div>';
+                        echo '<div class="wm-fancy-title"><h2>Welcome to <span>'.$settingObj['value'].'</span></h2></div>';
                     }
                 }
             }
@@ -19,7 +20,7 @@
     </div>
     
     <div class="row" style="padding: 25px;">
-        <div class="col-md-4 pre-scrollable" style="background-color: #f0f3f5; border: solid blue 2px;">
+        <div class="col-md-4 pre-scrollable" style="background-color: #f0f3f5; ">
             <div class="row text-center">
                 <h4 style="background-color: #dce0e3; padding: 10px;"><b>News / Updates</b></h4>
                 <br/>
@@ -49,7 +50,7 @@
                 }
             ?>
         </div>
-
+        <br/>
         <div class="col-md-4 pre-scrollable" style="background-color: #7f7f85;">
             <div class="row text-center">
                 <h4 style="background-color: #4b4b4f; padding: 10px;" class="text-white"><b>Events</b></h4>
@@ -87,8 +88,8 @@
                 }
             ?>
         </div>
-
-        <div class="col-md-4 pre-scrollable" style="background-color: #f0f3f5; border: solid blue 2px;">
+        <br/>
+        <div class="col-md-4 pre-scrollable" style="background-color: #f0f3f5; ">
             <div class="row text-center">
                 <h4 style="background-color: #dce0e3; padding: 10px;"><b>Notice</b></h4>
                 <br/>
@@ -120,3 +121,4 @@
 <br/>
 <br/>
 <br/>
+</div>

@@ -25,6 +25,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 
     <!-- Css Files -->
+    <link href="<?php echo base_url().'/bootstrap/custom.css'; ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/design/css/bootstrap.css'; ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/design/css/font-awesome.css'; ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/design/css/flaticon.css'; ?>" rel="stylesheet">
@@ -132,7 +133,14 @@
             <div class="wm-main-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3"><a href="index-2.html" class="wm-logo"><img src="<?php echo base_url().'/design/images/logo-1.png'; ?>" alt=""></a></div>
+                        <div class="col-md-3"><a href="#" class="wm-logo"> 
+                            <div style="border: 1px solid black; border-radius: 5px; width: 280px">
+                                <div class="row text-center">
+                                    <h2><b style="color: #777a80">E-Learning</b> <b style="color:#4998bf">Platform</b></h2>
+                                    <h2 style="color: black; text-weight: bold;">SHANTHIAM</h2>
+                                </div>
+                            </div>
+                         </a></div>
                         <div class="col-md-9">
                             <!--// Navigation \\-->
                             <nav class="navbar navbar-default">
