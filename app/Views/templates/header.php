@@ -38,6 +38,7 @@
     <link href="<?php echo base_url().'/design/css/color-three.css'; ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/design/css/color-four.css'; ?>" rel="stylesheet">
     <link href="<?php echo base_url().'/design/css/responsive.css'; ?>" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,6 +47,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+            <a id="whatsapp" href="https://api.whatsapp.com/send?phone=94774062211">
+            <img src="https://i.pinimg.com/736x/97/0e/9c/970e9c789697017247dcb7a693bd239c.jpg" style="border-radius: 100%;" width="80px" height="80px"/>
+            </a>
+            <button id="myBtn" onClick="topFunction()"></button>
+            <div id="top"></div>
   <body>
     <!--// Main Wrapper \\-->
     <div class="wm-main-wrapper">
@@ -128,7 +134,6 @@
         }
     ?>
     <!-- error message end -->
-
             <!--// MainHeader \\-->
             <div class="wm-main-header">
                 <div class="container">
