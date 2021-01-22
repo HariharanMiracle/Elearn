@@ -137,7 +137,7 @@
                             <div style="border: 1px solid black; border-radius: 5px; width: 280px">
                                 <div class="row text-center">
                                     <h2><b style="color: #777a80">E-Learning</b> <b style="color:#4998bf">Platform</b></h2>
-                                    <h2 style="color: black; text-weight: bold;">SHANTHIAM</h2>
+                                    <h2 style="color: black; text-weight: bold;">SHANTHIHAM</h2>
                                 </div>
                             </div>
                          </a></div>

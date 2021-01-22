@@ -16,6 +16,23 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`elearn` /*!40100 DEFAULT CHARACTER SET 
 
 USE `elearn`;
 
+/*Table structure for table `articles` */
+
+DROP TABLE IF EXISTS `articles`;
+
+CREATE TABLE `articles` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) DEFAULT NULL,
+  `pdf` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `articles` */
+
+insert  into `articles`(`id`,`title`,`pdf`) values (1,'Article 1','book.pdf');
+insert  into `articles`(`id`,`title`,`pdf`) values (2,'Article 2','1609398834_3bb5f4c9bc94f116c302.pdf');
+insert  into `articles`(`id`,`title`,`pdf`) values (4,'Article 3','1609399489_ed4a9e9d428cf0e9cb8f.pdf');
+
 /*Table structure for table `books` */
 
 DROP TABLE IF EXISTS `books`;
@@ -25,7 +42,7 @@ CREATE TABLE `books` (
   `title` varchar(200) NOT NULL,
   `pdf` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `books` */
 
@@ -33,6 +50,8 @@ insert  into `books`(`id`,`title`,`pdf`) values (1,'Living Book 1','1608304685_2
 insert  into `books`(`id`,`title`,`pdf`) values (2,'Living Book 2','1608616328_b74012a5ad5f66c965e7.pdf');
 insert  into `books`(`id`,`title`,`pdf`) values (3,'Living Book 3','1608616351_3e3f28b640c998fa57ef.pdf');
 insert  into `books`(`id`,`title`,`pdf`) values (4,'Living Book 4','1608616370_5f6528fed7ae77141bfd.pdf');
+insert  into `books`(`id`,`title`,`pdf`) values (5,'Exampe','1609399277_818c242bc8ea78b043ab.pdf');
+insert  into `books`(`id`,`title`,`pdf`) values (6,'Example 1','1609399387_7b9df4bcedf0c26858db.pdf');
 
 /*Table structure for table `course` */
 
@@ -44,11 +63,12 @@ CREATE TABLE `course` (
   `description` varchar(5000) DEFAULT NULL,
   `image` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `course` */
 
 insert  into `course`(`id`,`name`,`description`,`image`) values (1,'Science','<h1>Science</h1>\r\n\r\n<p>Science is a systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe. The earliest roots of science can be traced to Ancient Egypt and Mesopotamia in around 3500 to 3000 BCE.</p>\r\n\r\n<p><a href=\"https://en.wikipedia.org/wiki/Science\">Wikipedia - Science</a></p>\r\n','1608290280_32a857c3a526ca07cc52.png');
+insert  into `course`(`id`,`name`,`description`,`image`) values (2,'Math','<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n','1610864223_d465b219aec8e70ac7ae.jpg');
 
 /*Table structure for table `events` */
 
@@ -127,14 +147,32 @@ CREATE TABLE `setting` (
 
 /*Data for the table `setting` */
 
-insert  into `setting`(`id`,`tkey`,`value`) values (1,'address','Address');
-insert  into `setting`(`id`,`tkey`,`value`) values (2,'phone','0776318136');
-insert  into `setting`(`id`,`tkey`,`value`) values (3,'company','Company');
-insert  into `setting`(`id`,`tkey`,`value`) values (4,'classTime','Mon - fri: 7:00am - 6:00pm');
-insert  into `setting`(`id`,`tkey`,`value`) values (5,'title','title');
-insert  into `setting`(`id`,`tkey`,`value`) values (6,'phone1','0779784296');
-insert  into `setting`(`id`,`tkey`,`value`) values (7,'email','mailto:name@email.com');
-insert  into `setting`(`id`,`tkey`,`value`) values (8,'text-email','info@university.com');
+insert  into `setting`(`id`,`tkey`,`value`) values (1,'address','Shanthiham 8,8/1, Karpagavinayagar lane, Off Kachcheri Nallur Road, Jaffna.');
+insert  into `setting`(`id`,`tkey`,`value`) values (2,'phone','021 222 3338');
+insert  into `setting`(`id`,`tkey`,`value`) values (3,'company','Shanthiam');
+insert  into `setting`(`id`,`tkey`,`value`) values (4,'classTime','Mon - Fri: 08:00 AM To 05:00 PM');
+insert  into `setting`(`id`,`tkey`,`value`) values (5,'title','Shanthiham e-learning Platform');
+insert  into `setting`(`id`,`tkey`,`value`) values (6,'phone1','077 406 2211');
+insert  into `setting`(`id`,`tkey`,`value`) values (7,'email','mailto:director@shanthiham.org ');
+insert  into `setting`(`id`,`tkey`,`value`) values (8,'text-email','director@shanthiham.org ');
+
+/*Table structure for table `tag_article` */
+
+DROP TABLE IF EXISTS `tag_article`;
+
+CREATE TABLE `tag_article` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `articleId` int(10) DEFAULT NULL,
+  `tagId` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tag_article` */
+
+insert  into `tag_article`(`id`,`articleId`,`tagId`) values (2,2,2);
+insert  into `tag_article`(`id`,`articleId`,`tagId`) values (3,1,3);
+insert  into `tag_article`(`id`,`articleId`,`tagId`) values (6,4,2);
+insert  into `tag_article`(`id`,`articleId`,`tagId`) values (7,4,3);
 
 /*Table structure for table `tag_book` */
 
@@ -149,7 +187,7 @@ CREATE TABLE `tag_book` (
   KEY `fk_tags_tagId` (`tagId`),
   CONSTRAINT `fk_books_bookId` FOREIGN KEY (`bookId`) REFERENCES `books` (`id`),
   CONSTRAINT `fk_tags_tagId` FOREIGN KEY (`tagId`) REFERENCES `tags` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tag_book` */
 
@@ -157,7 +195,12 @@ insert  into `tag_book`(`id`,`bookId`,`tagId`) values (12,3,2);
 insert  into `tag_book`(`id`,`bookId`,`tagId`) values (14,4,2);
 insert  into `tag_book`(`id`,`bookId`,`tagId`) values (17,1,2);
 insert  into `tag_book`(`id`,`bookId`,`tagId`) values (18,1,3);
-insert  into `tag_book`(`id`,`bookId`,`tagId`) values (19,2,3);
+insert  into `tag_book`(`id`,`bookId`,`tagId`) values (19,5,3);
+insert  into `tag_book`(`id`,`bookId`,`tagId`) values (20,5,2);
+insert  into `tag_book`(`id`,`bookId`,`tagId`) values (22,6,2);
+insert  into `tag_book`(`id`,`bookId`,`tagId`) values (23,6,3);
+insert  into `tag_book`(`id`,`bookId`,`tagId`) values (24,2,2);
+insert  into `tag_book`(`id`,`bookId`,`tagId`) values (25,2,3);
 
 /*Table structure for table `tags` */
 
@@ -194,7 +237,7 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`email`,`fname`,`lname`,`contact`,`dob`,`privilege`,`status`) values (4,'Hariharan','$2y$10$QDkrcjFpD1Up8.irlcv73uYgEr5bg9gY/L5W8K0HiGYE/1fgx7xne','hariharansliit@gmail.com','Hariharan','Vasudevan','0776318136','1999-04-22','USER','ACTIVE');
+insert  into `user`(`id`,`username`,`password`,`email`,`fname`,`lname`,`contact`,`dob`,`privilege`,`status`) values (4,'Hariharan','$2y$10$QDkrcjFpD1Up8.irlcv73uYgEr5bg9gY/L5W8K0HiGYE/1fgx7xne','hariharansliit@gmail.com','Harry','Potter','0776318136','1999-04-22','USER','ACTIVE');
 insert  into `user`(`id`,`username`,`password`,`email`,`fname`,`lname`,`contact`,`dob`,`privilege`,`status`) values (5,'Admin','$2y$10$Adnt0JTzGoMyHhDqwX6efOUgWEASGgjoZE5Hu5fw0l89ONe8pVXiC','admin@gmail.com','Admin','Admin','0776318136','1999-04-22','ADMIN','ACTIVE');
 
 /*Table structure for table `videos` */
