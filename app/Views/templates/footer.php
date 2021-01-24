@@ -88,20 +88,20 @@
                                 </li>
                             </ul>
                         </aside>
-                        <aside class="widget widget_gallery col-md-3">
+                        <!-- <aside class="widget widget_gallery col-md-3">
                             <div class="wm-footer-widget-title"> <h5>Our Staffs</h5> </div>
                             <ul class="gallery">
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-1.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-1.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-2.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-2.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-3.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-3.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-4.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-4.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-5.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-5.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-6.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-6.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-7.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-7.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-8.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-8.jpg'; ?>" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php echo base_url().'/design/extra-images/widget-galleryfull-9.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-9.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-1.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-1.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-2.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-2.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-3.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-3.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-4.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-4.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-5.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-5.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-6.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-6.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-7.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-7.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-8.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-8.jpg'; ?>" alt=""></a></li>
+                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="<?php // echo base_url().'/design/extra-images/widget-galleryfull-9.jpg'; ?>"><img src="<?php echo base_url().'/design/extra-images/widget-gallery-9.jpg'; ?>" alt=""></a></li>
                             </ul>
-                        </aside>
+                        </aside> -->
                     </div>
                 </div>
             </div>

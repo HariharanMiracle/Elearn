@@ -117,6 +117,44 @@
             ?>
         </div>
     </div>
+
+    <br/>
+            <div class="wm-main-section wm-contact-full">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            
+                            <div class="wm-contact-tab">
+
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" aria-controls="home" data-toggle="tab">Facebook Page</a></li>
+                                <li><a href="https://www.facebook.com/siddukkal/" aria-controls="profile" data-toggle="tab">சிறகடிக்கும் சிட்டுக்கள்</a></li>
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                <div class="tab-pane active" id="home">
+                                    <div class="row">
+                                        <div class="col-md-4"> <div class="wm-map"> <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsiddukkal&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> </div> </div>
+                                        <div class="col-md-8">
+                                            <div class="wm-contact-form">
+                                                <span>சிறகடிக்கும் சிட்டுக்கள்</span>
+                                                <img src = "<?php echo base_url().'/design/images/fb_wp.jpg' ?>" height="50%" width="50%"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>    
 </main>
 <br/>
 <br/>
