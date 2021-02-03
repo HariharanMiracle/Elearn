@@ -47,7 +47,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-            <a id="whatsapp" href="https://api.whatsapp.com/send?phone=94774062211">
+            <a target="_blank" id="whatsapp" href="https://api.whatsapp.com/send?phone=94774062211">
             <img src="https://i.pinimg.com/736x/97/0e/9c/970e9c789697017247dcb7a693bd239c.jpg" style="border-radius: 100%;" width="80px" height="80px"/>
             </a>
             <button id="myBtn" onClick="topFunction()"></button>
@@ -138,7 +138,7 @@
             <div class="wm-main-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3"><a href="#" class="wm-logo"> 
+                        <div class="col-md-4"><a href="#" class="wm-logo"> 
                             <div style="border: 1px solid black; border-radius: 5px; width: 280px">
                                 <div class="row text-center">
                                     <h2><b style="color: #777a80">E-Learning</b> <b style="color:#4998bf">Platform</b></h2>
@@ -146,7 +146,7 @@
                                 </div>
                             </div>
                          </a></div>
-                        <div class="col-md-9">
+                        <div class="col-md-8">
                             <!--// Navigation \\-->
                             <nav class="navbar navbar-default">
                                 <div class="navbar-header">

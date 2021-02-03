@@ -50,7 +50,7 @@
                                             echo '<td>'.$count.'</td>';
                                             echo '<td>'.$obj['title'].'</   td>';
                                             echo '<td><img src="'.base_url().'/uploads/images/events/'.$obj['image'].'" height="250px" width="250px"/></td>';
-                                            echo '<td><a class="text-info" href="'.$obj['link'].'">'.$obj['link'].'</a></td>';
+                                            echo '<td><a target="_blank" class="text-info" href="'.$obj['link'].'">'.$obj['link'].'</a></td>';
                                             echo '<td>'.$obj['eventDate'].'</td>';
                                             echo '<td>'.$obj['eventTime'].'</td>';
                                             echo '<td>'.$obj['postedOn'].'</td>';

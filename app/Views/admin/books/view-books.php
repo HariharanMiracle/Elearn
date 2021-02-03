@@ -8,7 +8,7 @@
         </div>
     </div>
     <h5><b>Book name:</b> <?php echo $books['title']; ?></h5>
-    <h5><b>Pdf:</b> <?php echo '<a class="text-info" href="'.base_url().'/uploads/pdf/books/'.$books['pdf'].'">'.$books['title'].'</a>'; ?></h5>
+    <h5><b>Pdf:</b> <?php echo '<a class="text-info" target="_blank" href="'.base_url().'/uploads/pdf/books/'.$books['pdf'].'">'.$books['title'].'</a>'; ?></h5>
     <br/>
     <div class="row">
         <div class="col-12 text-center">

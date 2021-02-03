@@ -55,7 +55,7 @@
                                             </figcaption>
                                         </figure>
                                         <div class="wm-popular-courses-text">
-                                            <a href="<?php echo 'http://flowpaper.com/flipbook/'.base_url().'/uploads/pdf/books/'.$booksObj['pdf']; ?>" class="btn btn-success">Read Me!</a>
+                                            <a href="<?php echo 'http://flowpaper.com/flipbook/'.base_url().'/uploads/pdf/books/'.$booksObj['pdf']; ?>" class="btn btn-success" target="_blank">Read Me!</a>
                                         </div>
                                     </div>
                                 </li>
@@ -72,7 +72,7 @@
                                             </figcaption>
                                         </figure>
                                         <div class="wm-popular-courses-text">
-                                            <a href="<?php echo 'http://flowpaper.com/flipbook/'.base_url().'/uploads/pdf/books/'.$booksObj['pdf']; ?>" class="btn btn-success">Read Me!</a>
+                                            <a href="<?php echo 'http://flowpaper.com/flipbook/'.base_url().'/uploads/pdf/books/'.$booksObj['pdf']; ?>" class="btn btn-success" target="_blank">Read Me!</a>
                                         </div>
                                     </div>
                                 </li>

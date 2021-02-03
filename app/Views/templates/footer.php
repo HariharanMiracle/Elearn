@@ -66,9 +66,9 @@
                                 </li>
                             </ul>
                             <div class="wm-footer-icons">
-                                <a href="https://www.facebook.com/shanthiaham" class="wmicon-social5"></a>
-                                <a href="https://twitter.com/shanthiham?lang=en" class="wmicon-social4"></a>
-                                <a href="https://www.instagram.com/shanthiham/" class="wmicon-social3"></a>
+                                <a target="_blank" href="https://www.facebook.com/shanthiaham" class="wmicon-social5"></a>
+                                <a target="_blank" href="https://twitter.com/shanthiham?lang=en" class="wmicon-social4"></a>
+                                <a target="_blank" href="https://www.instagram.com/shanthiham/" class="wmicon-social3"></a>
                             </div>
                         </aside>
                         <aside class="widget widget_twitter col-md-5">
@@ -76,15 +76,15 @@
                             <ul>
                                 <li>
                                     <p>No one can make you feel inferior without your consent.</p>
-                                    <p><i><a href="https://en.wikipedia.org/wiki/Eleanor_Roosevelt">~ Eleanor Roosevelt (Goodreads; GR)</a></i></p>
+                                    <p><i><a target="_blank" href="https://en.wikipedia.org/wiki/Eleanor_Roosevelt">~ Eleanor Roosevelt (Goodreads; GR)</a></i></p>
                                 </li>
                                 <li>
                                     <p>If I were to try to read, much less answer, all the attacks made on me, this shop might as well be closed for any other business.</p>
-                                    <p><i><a href="https://en.wikipedia.org/wiki/Abraham_Lincoln">~ Abraham Lincoln (Brainyquote; BQ)</a></i></p>
+                                    <p><i><a target="_blank" href="https://en.wikipedia.org/wiki/Abraham_Lincoln">~ Abraham Lincoln (Brainyquote; BQ)</a></i></p>
                                 </li>
                                 <li>
                                     <p>Our greatest glory is not in never falling, but in rising every time we fall.</p>
-                                    <p><i><a href="https://en.wikipedia.org/wiki/Confucius">~ Confucius (BQ)</a></i></time>
+                                    <p><i><a target="_blank" href="https://en.wikipedia.org/wiki/Confucius">~ Confucius (BQ)</a></i></time>
                                 </li>
                             </ul>
                         </aside>
@@ -113,7 +113,7 @@
                     <div class="row">
                         <div class="text-center text-white">Copyright <?php echo date('Y'); ?>
                             &copy;
-                            <a class="text-white" target="_blank" href="#">
+                            <a class="text-white" target="_blank" href="https://www.shanthiham.lk/">
                             <?php
                                 foreach($setting as $settingObj){
                                     if($settingObj['tkey'] == 'company'){

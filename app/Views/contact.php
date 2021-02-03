@@ -60,13 +60,13 @@
                                 <p>It's our pleasure to help you...</p>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="https://www.facebook.com/shanthiaham"><img src = "<?php echo base_url().'/uploads/images/4.png'; ?>" height="100px" width="100px"/></a>
+                                        <a target="_blank" href="https://www.facebook.com/shanthiaham"><img src = "<?php echo base_url().'/uploads/images/4.png'; ?>" height="100px" width="100px"/></a>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="https://www.instagram.com/shanthiham/"><img src = "<?php echo base_url().'/uploads/images/5.png'; ?>" height="100px" width="100px"/></a>
+                                        <a target="_blank" href="https://www.instagram.com/shanthiham/"><img src = "<?php echo base_url().'/uploads/images/5.png'; ?>" height="100px" width="100px"/></a>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="https://twitter.com/shanthiham?lang=en"><img src = "<?php echo base_url().'/uploads/images/6.png'; ?>" height="100px" width="100px"/></a>
+                                        <a target="_blank" href="https://twitter.com/shanthiham?lang=en"><img src = "<?php echo base_url().'/uploads/images/6.png'; ?>" height="100px" width="100px"/></a>
                                     </div>
                                 </div>
                             </div>

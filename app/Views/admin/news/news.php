@@ -49,7 +49,7 @@
                                             echo '<td>'.$obj['title'].'</td>';
                                             echo '<td><img src="'.base_url().'/uploads/images/news/'.$obj['image'].'" height="250px" width="250px"/></td>';
                                             echo '<td>'.$obj['description'].'</td>';
-                                            echo '<td><a class="text-info" href="'.$obj['link'].'">'.$obj['link'].'</a></td>';
+                                            echo '<td><a target="_blank" class="text-info" href="'.$obj['link'].'">'.$obj['link'].'</a></td>';
                                             echo '<td>'.$obj['newsDate'].'</td>';
                                             echo '<td>'.$obj['newsTime'].'</td>';
                                             echo '<td>'.$obj['postedOn'].'</td>';

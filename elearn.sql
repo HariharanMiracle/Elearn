@@ -147,9 +147,9 @@ CREATE TABLE `setting` (
 
 /*Data for the table `setting` */
 
-insert  into `setting`(`id`,`tkey`,`value`) values (1,'address','Shanthiham 8,8/1, Karpagavinayagar lane, Off Kachcheri Nallur Road, Jaffna.');
+insert  into `setting`(`id`,`tkey`,`value`) values (1,'address','Shanthiham 8, 8/1, Katpaha Vinayagar Lane, Off Kachcheri Nallur Road 40000 Jaffna, Sri Lanka.');
 insert  into `setting`(`id`,`tkey`,`value`) values (2,'phone','021 222 3338');
-insert  into `setting`(`id`,`tkey`,`value`) values (3,'company','Shanthiam');
+insert  into `setting`(`id`,`tkey`,`value`) values (3,'company','Shanthiham');
 insert  into `setting`(`id`,`tkey`,`value`) values (4,'classTime','Mon - Fri: 08:00 AM To 05:00 PM');
 insert  into `setting`(`id`,`tkey`,`value`) values (5,'title','Shanthiham e-learning Platform');
 insert  into `setting`(`id`,`tkey`,`value`) values (6,'phone1','077 406 2211');

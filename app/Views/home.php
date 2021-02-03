@@ -34,7 +34,7 @@
                             <div class="text-center"><?php echo '<img src="'.base_url().'/uploads/images/news/'.$newsObj['image'].'" class="card-img-top"/>'; ?></div>
                             <div class="card-body">
                                 <?php echo $newsObj['description']; ?>
-                                <?php echo '<a class="text-info" href="'.$newsObj['link'].'">'.$newsObj['link'].'</a>'; ?>
+                                <?php echo '<a target="_blank" class="text-info" href="'.$newsObj['link'].'">'.$newsObj['link'].'</a>'; ?>
                             </div>
                             <div class="card-footer text-center" style="background-color: #dce0e3; padding: 10px;">
                             <small class="text-muted"><?php echo '<b>News Date:</b> '.$newsObj['newsDate']; ?></small> <b>/</b>
@@ -65,7 +65,7 @@
                             <div class="text-center"><?php echo '<img src="'.base_url().'/uploads/images/events/'.$eventsObj['image'].'" class="card-img-top"/>'; ?></div>
                             <div class="card-body">
                                 <br/>
-                                <h5 class="text-white"><b>Zoom Link:</b> <?php echo '<a href="'.$eventsObj['link'].'">'.$eventsObj['link'].'</a>'; ?></h5>
+                                <h5 class="text-white"><b>Zoom Link:</b> <?php echo '<a href="'.$eventsObj['link'].'"  target="_blank">'.$eventsObj['link'].'</a>'; ?></h5>
                                 <br/>
                                 <h5 class="text-white"><b>Meeting Id:</b> <?php echo $eventsObj['meetingId']; ?></h5>
                                 <br/>
@@ -129,8 +129,8 @@
 
                               <!-- Nav tabs -->
                               <ul class="nav nav-tabs">
-                                <li class="active"><a href="#home" aria-controls="home" data-toggle="tab">Facebook Page</a></li>
-                                <li><a href="https://www.facebook.com/siddukkal/" aria-controls="profile" data-toggle="tab">சிறகடிக்கும் சிட்டுக்கள்</a></li>
+                                <li class="active"><a href="#home" aria-controls="home" data-toggle="tab"  target="_blank">Facebook Page</a></li>
+                                <li><a href="https://www.facebook.com/siddukkal/" aria-controls="profile" data-toggle="tab"  target="_blank">சிறகடிக்கும் சிட்டுக்கள்</a></li>
                               </ul>
 
                               <!-- Tab panes -->

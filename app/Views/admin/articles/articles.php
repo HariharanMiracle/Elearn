@@ -43,7 +43,7 @@
                                         echo '<tr>';
                                             echo '<td>'.$count.'</td>';
                                             echo '<td>'.$obj['title'].'</td>';
-                                            echo '<td><a class="text-info" href="'.base_url().'/uploads/pdf/articles/'.$obj['pdf'].'">'.$obj['title'].'</a></td>';
+                                            echo '<td><a target="_blank" class="text-info" href="'.base_url().'/uploads/pdf/articles/'.$obj['pdf'].'">'.$obj['title'].'</a></td>';
                                             echo '<td><a class="a-orange" href="'.base_url().'/Articles/view/'.$obj['id'].'" alt="View Articles - '.$obj['name'].'"><i class="far fa-eye"></i></a></td>';
                                             echo '<td><a class="a-orange" href="'.base_url().'/Articles/edit/'.$obj['id'].'" alt="Edit Articles - '.$obj['name'].'"><i class="far fa-edit"></i></a></td>';
                                             echo '<td><a class="a-orange" href="'.base_url().'/Articles/delete/'.$obj['id'].'" alt="Delete Articles - '.$obj['name'].'"><i class="far fa-trash-alt"></i></a></td>';
