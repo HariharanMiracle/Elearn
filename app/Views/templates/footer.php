@@ -4,7 +4,7 @@
             <div class="wm-footer-widget">
                 <div class="container">
                     <div class="row">
-                        <aside class="widget widget_contact_info col-md-4">
+                        <aside class="widget widget_contact_info col-md-8">
                         <div class="col-md-3"><a href="#" class="wm-logo"> 
                             <div style="border: 1px solid black; border-radius: 5px; width: 280px">
                                 <div class="row text-center">
@@ -71,7 +71,7 @@
                                 <a target="_blank" href="https://www.instagram.com/shanthiham/" class="wmicon-social3"></a>
                             </div>
                         </aside>
-                        <aside class="widget widget_twitter col-md-5">
+                        <!-- <aside class="widget widget_twitter col-md-5">
                             <div class="wm-footer-widget-title"> <h5>@quotes</h5> </div>
                             <ul>
                                 <li>
@@ -87,7 +87,7 @@
                                     <p><i><a target="_blank" href="https://en.wikipedia.org/wiki/Confucius">~ Confucius (BQ)</a></i></time>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> -->
                         <!-- <aside class="widget widget_gallery col-md-3">
                             <div class="wm-footer-widget-title"> <h5>Our Staffs</h5> </div>
                             <ul class="gallery">
@@ -288,3 +288,11 @@ var mybutton = document.getElementById("myBtn");
 <script>
 	initSample();
 </script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

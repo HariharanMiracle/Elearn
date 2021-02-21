@@ -137,11 +137,19 @@
                               <div class="tab-content">
                                 <div class="tab-pane active" id="home">
                                     <div class="row">
-                                        <div class="col-md-4"> <div class="wm-map"> <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsiddukkal&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> </div> </div>
+                                        <div class="col-md-4"> 
+                                            <div class="wm-map"> 
+                                                <div class="p-4 text-center">
+                                                    <!-- <h1>Follow Us</h1>
+                                                    <h2>on facebook</h2>
+                                                    <h1><b>சிறகடிக்கும் சிட்டுக்கள்</b></h1> -->
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-md-8">
                                             <div class="wm-contact-form">
-                                                <span>சிறகடிக்கும் சிட்டுக்கள்</span>
-                                                <img src = "<?php echo base_url().'/design/images/fb_wp.jpg' ?>" height="50%" width="50%"/>
+                                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsiddukkal&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                                <!-- <img src = "<?php // echo base_url().'/design/images/fb_wp.jpg' ?>" height="50%" width="50%"/> -->
                                             </div>
                                         </div>
                                     </div>

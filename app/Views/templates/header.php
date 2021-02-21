@@ -54,6 +54,9 @@
             <div id="top"></div>
   <body>
     <!--// Main Wrapper \\-->
+    <div>
+        <div id="google_translate_element"></div>
+    </div>
     <div class="wm-main-wrapper">
         
         <!--// Header \\-->
@@ -163,7 +166,7 @@
                                       ?>
                                         <ul class="nav navbar-nav">
                                             <li class="active"><a class="active-link" href="<?php echo base_url(); ?>">Home</a></li>
-                                            <li><a href="#">Readings</a>
+                                            <li><a href="#">E-Publishing</a>
                                                 <ul class="wm-dropdown-menu">
                                                     <li><a href="<?php echo base_url('/Home/books'); ?>">E-Books</a></li>
                                                     <li><a href="<?php echo base_url('/Home/articles'); ?>">Articles</a></li>
